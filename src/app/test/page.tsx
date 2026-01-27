@@ -48,8 +48,7 @@ const sections = [
     { type: 'gradient', value: "bg-gradient-to-bl from-[#2c2c2c] via-[#1f1f1f] to-[#121212]" },
     { type: 'gradient', value: "bg-gradient-to-r from-[#232526] to-[#414345]" },
     { type: 'gradient', value: "bg-gradient-to-t from-[#000000] via-[#191919] to-[#333333]" },
-    { type: 'gradient', value: "bg-gradient-to-b from-[#111111] to-[#2b2b2b]" },
-    { type: 'image', value: "/textures/texture1.avif" },
+    { type: 'image', value: "/Bitwise glitch.webp" },
     { type: 'image', value: "/textures/texture2.avif" },
     { type: 'image', value: "/textures/texture3.jpg" },
 ];
