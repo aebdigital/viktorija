@@ -24,9 +24,7 @@ export default function KontaktPage() {
                 {/* Contact Text & Form */}
                 <div className="space-y-12 animate-fade-in-up">
                     <div>
-                        <h1 className="font-saol italic text-6xl md:text-8xl text-white mb-6 tracking-wide drop-shadow-2xl">
-                            KONTAKT
-                        </h1>
+
                         <p className="font-montserrat text-lg md:text-xl text-white/80 font-light max-w-lg leading-relaxed border-l-2 border-gold pl-6">
                             Máte otázky alebo sa chcete objednať? Neváhajte ma kontaktovať.
                         </p>
