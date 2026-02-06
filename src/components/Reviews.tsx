@@ -20,12 +20,12 @@ const REVIEWS = [
 
 export default function Reviews() {
     return (
-        <section id="referencie" className="bg-main-bg py-24 overflow-hidden">
+        <section id="referencie" className="py-24 overflow-hidden">
             <div className="w-[95vw] mx-auto mb-16 text-center">
-                <h2 className="font-marcellus text-4xl mb-4 text-white tracking-widest">
+                <h2 className="font-marcellus text-4xl mb-4 text-[#1D0E22] tracking-widest">
                     REFERENCIE
                 </h2>
-                <p className="font-montserrat text-gold text-lg uppercase tracking-wider">
+                <p className="font-montserrat text-[#1D0E22] text-lg uppercase tracking-wider">
                     Čo hovoria naše klientky
                 </p>
             </div>
@@ -48,11 +48,11 @@ export default function Reviews() {
                                 key={i}
                                 className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-xl w-[350px] md:w-[450px] flex-shrink-0 hover:bg-white/10 transition-colors"
                             >
-                                <p className="font-montserrat font-light text-white/90 italic mb-6 leading-relaxed">
+                                <p className="font-montserrat font-light text-[#1D0E22] italic mb-6 leading-relaxed">
                                     "{review.text}"
                                 </p>
                                 <div className="border-t border-white/10 pt-4">
-                                    <p className="font-marcellus text-gold tracking-wider text-sm">
+                                    <p className="font-marcellus text-[#1D0E22] tracking-wider text-sm">
                                         {review.name.toUpperCase()}
                                     </p>
                                 </div>

@@ -56,17 +56,17 @@ export default function Services() {
 
                                 {/* Content */}
                                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
-                                    <h3 className="font-marcellus text-xl md:text-2xl text-white tracking-widest mb-2 transition-colors duration-300 md:group-hover:text-gold uppercase">
+                                    <h3 className="font-marcellus text-xl md:text-2xl text-[#EEE3CE] tracking-widest mb-2 transition-colors duration-300 md:group-hover:text-gold uppercase">
                                         {service.title}
                                     </h3>
 
                                     <div className="overflow-hidden md:max-h-0 md:group-hover:max-h-24 transition-all duration-500 ease-in-out">
-                                        <p className="font-montserrat text-white text-xs md:text-sm font-light opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                                        <p className="font-montserrat text-[#EEE3CE] text-xs md:text-sm font-light opacity-0 md:group-hover:opacity-100 transition-opacity duration-700 delay-100">
                                             {service.subtitle}
                                         </p>
                                     </div>
                                     {/* Mobile: Always show subtitle */}
-                                    <p className="md:hidden font-montserrat text-white text-xs font-light mt-1 opacity-80">
+                                    <p className="md:hidden font-montserrat text-[#EEE3CE] text-xs font-light mt-1 opacity-80">
                                         {service.subtitle}
                                     </p>
                                 </div>
@@ -80,7 +80,7 @@ export default function Services() {
                         <div className="absolute inset-0 transition-transform duration-700 md:group-hover:scale-110">
                             <Image
                                 src="/vik3.jpg"
-                                alt="Academia"
+                                alt="ACADEMY"
                                 fill
                                 className="object-cover"
                             />
@@ -91,38 +91,38 @@ export default function Services() {
 
                         {/* Content */}
                         <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center z-10">
-                            <h3 className="font-marcellus text-4xl md:text-5xl text-white tracking-[0.2em] mb-8 transition-colors duration-300 md:group-hover:text-gold uppercase">
-                                ACADEMIA
+                            <h3 className="font-marcellus text-4xl md:text-5xl text-[#EEE3CE] tracking-[0.2em] mb-8 transition-colors duration-300 md:group-hover:text-gold uppercase">
+                                ACADEMY
                             </h3>
 
                             <div className="space-y-4 text-left inline-block">
                                 <div className="flex items-start gap-3">
                                     <span className="text-gold mt-1">✦</span>
-                                    <p className="font-montserrat text-white text-lg font-light">Akreditovaný profesionálny kurz <br />permanentného make-upu</p>
+                                    <p className="font-montserrat text-[#EEE3CE] text-lg font-light">Akreditovaný profesionálny kurz <br />permanentného make-upu</p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-gold">✦</span>
-                                    <p className="font-montserrat text-white text-lg font-light">Tri techniky púdrového obočia</p>
+                                    <p className="font-montserrat text-[#EEE3CE] text-lg font-light">Tri techniky púdrového obočia</p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-gold">✦</span>
-                                    <p className="font-montserrat text-white text-lg font-light">Hyperrealistické obočie</p>
+                                    <p className="font-montserrat text-[#EEE3CE] text-lg font-light">Hyperrealistické obočie</p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-gold">✦</span>
-                                    <p className="font-montserrat text-white text-lg font-light">3 najmodernejšie techniky PMU pier</p>
+                                    <p className="font-montserrat text-[#EEE3CE] text-lg font-light">3 najmodernejšie techniky PMU pier</p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-gold">✦</span>
-                                    <p className="font-montserrat text-white text-lg font-light">Očné linky</p>
+                                    <p className="font-montserrat text-[#EEE3CE] text-lg font-light">Očné linky</p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-gold">✦</span>
-                                    <p className="font-montserrat text-white text-lg font-light">Nastreľovanie náušníc</p>
+                                    <p className="font-montserrat text-[#EEE3CE] text-lg font-light">Nastreľovanie náušníc</p>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-gold">✦</span>
-                                    <p className="font-montserrat text-white text-lg font-light">Laser touch</p>
+                                    <p className="font-montserrat text-[#EEE3CE] text-lg font-light">Laser touch</p>
                                 </div>
                             </div>
 

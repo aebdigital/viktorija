@@ -26,8 +26,8 @@ export default function About() {
                 {/* Text Content */}
                 <div className="space-y-8 relative z-10">
                     <div>
-                        <h2 className="font-marcellus text-4xl md:text-5xl text-white mb-2 tracking-wide">
-                            VIKTORIJA <span className="text-gold-gradient">KENDRA</span>
+                        <h2 className="!font-alex text-5xl md:text-6xl text-white mb-2 tracking-wide">
+                            Viktorija <span className="text-gold-gradient">Kendra</span>
                         </h2>
                         <p className="font-montserrat text-gold-light text-lg font-light tracking-wide uppercase">
                             Permanent make-up artistka a školiteľka

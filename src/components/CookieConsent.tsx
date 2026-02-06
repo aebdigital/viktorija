@@ -53,7 +53,7 @@ export default function CookieConsent() {
         <>
             {/* Main Bar - Visible when show is true AND settings are NOT open. */}
             {show && (
-                <div className={`fixed bottom-0 left-0 w-full z-[100] bg-zinc-900/95 backdrop-blur-md border-t border-gold/30 text-white shadow-2xl animate-fade-in-up transition-opacity duration-300 ${showSettings ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                <div className={`fixed bottom-0 left-0 w-full z-[100] bg-[#1D0E22] border-t border-gold/30 text-white shadow-2xl animate-fade-in-up transition-opacity duration-300 ${showSettings ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                     <div className="container mx-auto px-6 py-6 max-w-6xl">
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                             <div className="space-y-2 flex-1">
@@ -67,7 +67,7 @@ export default function CookieConsent() {
                             <div className="flex flex-col sm:flex-row gap-3 min-w-fit">
                                 <button
                                     onClick={handleAcceptAll}
-                                    className="px-6 py-3 bg-gold text-main-bg font-bold font-marcellus uppercase tracking-wider hover:bg-white transition-colors text-sm"
+                                    className="px-6 py-3 bg-gold text-[#1D0E22] font-bold font-marcellus uppercase tracking-wider hover:bg-white transition-colors text-sm"
                                 >
                                     Prijať všetky
                                 </button>
@@ -86,7 +86,7 @@ export default function CookieConsent() {
             {/* Settings Modal Overlay */}
             {showSettings && (
                 <div className="fixed inset-0 z-[110] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
-                    <div className="bg-main-bg border border-gold/30 w-full max-w-xl rounded-xl shadow-2xl overflow-hidden animate-scale-in">
+                    <div className="bg-[#1D0E22] border border-gold/30 w-full max-w-xl rounded-xl shadow-2xl overflow-hidden animate-scale-in">
 
                         {/* Modal Header */}
                         <div className="p-6 border-b border-white/10 flex justify-between items-center bg-black/20">
