@@ -17,7 +17,7 @@ const ACHIEVEMENTS = [
 
 export default function About() {
     return (
-        <section id="omne" className="bg-main-bg py-24 relative overflow-hidden">
+        <section id="omne" className="py-24 relative overflow-hidden">
             {/* Decorative Gold Elements */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 

@@ -22,7 +22,7 @@ const SERVICES = [
         image: "/sluzby/nastrelovanie.webp",
     },
     {
-        title: "KOZMETIKA & STAROSTLIVOSŤ",
+        title: "RITUÁLY TVÁRE",
         image: "/sluzby/kozmetika.webp",
     },
     {
@@ -77,8 +77,6 @@ export default function Hero() {
 
     return (
         <section className="min-h-screen w-full relative pt-16 md:pt-32 pb-20 px-2 md:px-4 overflow-hidden">
-            {/* Red Background is handled by bg-main-bg class (#3f1827) */}
-
             {/* Cursor Follower Image */}
             <AnimatePresence>
                 {hoveredServiceImage && (
@@ -157,7 +155,6 @@ export default function Hero() {
                                 src="/viktoria hero section vid.mp4"
                                 loop
                                 playsInline
-                                muted
                                 className="w-full h-full object-cover"
                             />
                         </motion.div>

@@ -6,30 +6,30 @@ import Link from "next/link";
 const BLOG_POSTS = [
     {
         id: 1,
-        title: "Permanentný make-up: Čo potrebujete vedieť",
-        excerpt: "Všetko o príprave, procese a starostlivosti po zákroku permanentného make-upu.",
-        image: "/sluzby/permanent.jpg",
-        slug: "permanentny-makeup-co-potrebujete-vediet"
+        title: "Čo sa deje s pokožkou v procese permanentného make-upu",
+        excerpt: "Pokožka, pigment, ihla a ruky artista – štyria aktéri, ktorí vytvárajú prirodzený permanentný make-up.",
+        image: "/blog/co-sa-deje/a447c5d5-1bd1-40a7-8ceb-e2d5d599c470.JPG",
+        slug: "co-sa-deje-s-pokozkou-v-procese-pmu"
     },
     {
-        id: 2,
-        title: "Techniky púdrového obočia",
-        excerpt: "Objavte tri moderné techniky púdrového obočia, ktoré ponúkame v našom štúdiu.",
-        image: "/sluzby/pmu-brows.jpg",
-        slug: "techniky-pudroveho-obocia"
+        id: 5,
+        title: "Komplikácie pri permanentnom make-upe",
+        excerpt: "Najčastejšou komplikáciou je neodborne vykonaný permanentný make-up. Riešením takýchto stavov je odstránenie pigmentu.",
+        image: "/blog/co-sa-deje/komplikacie/9e62ada0-eb59-4b9d-b33b-0de486fc9f7b.JPG",
+        slug: "komplikacie-pri-permanentnom-make-upe"
     },
     {
-        id: 3,
-        title: "Starostlivosť o pleť v zime",
-        excerpt: "Tipy a triky ako sa starať o pleť počas chladných zimných mesiacov.",
-        image: "/sluzby/kozmetika.webp",
-        slug: "starostlivost-o-plet-v-zime"
+        id: 6,
+        title: "Laser a remover",
+        excerpt: "Odstraňovanie nežiadúceho permanentného make-upu je odborný proces, ktorý rešpektuje biologické zákonitosti kože.",
+        image: "/Laser-pmu-odstranenie/def471a9-c59d-4981-9d9a-4e453c6a9e82.JPG",
+        slug: "laser-a-remover"
     },
 ];
 
 export default function BlogSection() {
     return (
-        <section className="py-20 px-4">
+        <section className="py-20 px-4" id="blog">
             <div className="w-[90vw] max-w-7xl mx-auto">
                 <div className="w-full text-center mb-16">
                     <h2 className="font-marcellus text-4xl mb-4 text-[#1D0E22] tracking-widest">
@@ -40,7 +40,7 @@ export default function BlogSection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {BLOG_POSTS.map((post) => (
                         <Link
                             key={post.id}

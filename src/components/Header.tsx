@@ -14,7 +14,7 @@ interface NavItem {
 
 function NavLink({ label, href }: NavItem) {
     const pathname = usePathname();
-    const isActive = pathname === href;
+    const isActive = href === "/" ? pathname === "/" : pathname.startsWith(href);
 
     return (
         <div className="relative group py-6">
@@ -27,8 +27,8 @@ function NavLink({ label, href }: NavItem) {
                     href={href}
                     className={`font-marcellus uppercase tracking-widest text-xl transition-all duration-500 no-underline block text-[#1D0E22]
                         ${isActive
-                            ? '[text-shadow:0_0_15px_rgba(29,14,34,0.6),0_0_8px_rgba(29,14,34,0.4)]'
-                            : 'hover:[text-shadow:0_0_20px_rgba(29,14,34,0.7),0_0_10px_rgba(29,14,34,0.5)]'
+                            ? '[text-shadow:0_0_30px_rgba(238,227,206,1),0_0_15px_rgba(238,227,206,0.9),0_0_60px_rgba(238,227,206,0.6),0_0_80px_rgba(218,197,156,0.3)]'
+                            : 'hover:[text-shadow:0_0_20px_rgba(238,227,206,0.9),0_0_10px_rgba(238,227,206,0.7),0_0_40px_rgba(238,227,206,0.4)]'
                         }`}
                 >
                     {label}
@@ -48,20 +48,12 @@ const NAV_RIGHT: NavItem[] = [
         label: "ACADEMY",
         href: "/#academy"
     },
+    { label: "Test 2", href: "/test2" },
     { label: "Kontakt", href: "/kontakt" },
 ];
 
 export default function Header() {
-    const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     // Prevent scroll when menu is open
     useEffect(() => {
@@ -73,8 +65,7 @@ export default function Header() {
     }, [isMenuOpen]);
 
     return (
-        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-white/80 backdrop-blur-md shadow-sm py-2" : "py-4 md:py-6"
-            }`}>
+        <header className="fixed top-0 left-0 w-full z-50 py-2 md:py-3">
             <div className="w-[90vw] mx-auto flex items-center justify-between md:justify-center relative">
 
                 {/* Mobile Logo (Left) */}

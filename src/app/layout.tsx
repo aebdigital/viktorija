@@ -3,6 +3,7 @@ import { Marcellus_SC, Montserrat, Alex_Brush, Prociono } from "next/font/google
 import "./globals.css";
 import SmoothScroller from "@/components/SmoothScroller";
 import CookieConsent from "@/components/CookieConsent";
+import SiteBackdrop from "@/components/SiteBackdrop";
 
 const marcellus = Marcellus_SC({
   variable: "--font-marcellus",
@@ -44,9 +45,13 @@ export default function RootLayout({
     <html lang="sk">
       <body
         className={`${marcellus.variable} ${montserrat.variable} ${alexBrush.variable} ${prociono.variable} antialiased`}
+        style={{ backgroundColor: "#A9AFB9" }}
       >
+        <SiteBackdrop />
         <SmoothScroller>
-          {children}
+          <div className="relative z-10 min-h-screen">
+            {children}
+          </div>
         </SmoothScroller>
         <CookieConsent />
       </body>

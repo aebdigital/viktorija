@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function PrivacyPage() {
     return (
-        <main className="min-h-screen bg-main-bg text-[#1D0E22]">
+        <main className="min-h-screen text-[#1D0E22]">
             <Header />
 
             <div className="pt-40 pb-24 w-[95vw] md:w-[60vw] mx-auto min-h-screen font-montserrat font-light text-[#1D0E22]/90 leading-relaxed">
@@ -26,7 +26,7 @@ export default function PrivacyPage() {
                     </div>
 
                     <p>
-                        Tieto Zásady ochrany osobných údajov (ďalej len „Zásady") popisujú, aké osobné údaje spracúvame v súvislosti s používaním našej webovej stránky a kontaktných formulárov.
+                        Tieto Zásady ochrany osobných údajov (ďalej len „Zásady&quot;) popisujú, aké osobné údaje spracúvame v súvislosti s používaním našej webovej stránky a kontaktných formulárov.
                     </p>
 
                     <section className="space-y-4">
@@ -125,7 +125,7 @@ export default function PrivacyPage() {
                         <ul className="list-disc pl-5 space-y-2 marker:text-[#1D0E22]">
                             <li>Prístup k osobným údajom, ktoré spracúvame</li>
                             <li>Oprava nepresných alebo neúplných údajov</li>
-                            <li>Vymazanie („právo zabudnutia"), ak na spracovanie už nie je právny základ</li>
+                            <li>Vymazanie („právo zabudnutia&quot;), ak na spracovanie už nie je právny základ</li>
                             <li>Obmedzenie spracovania</li>
                             <li>Prenosnosť údajov</li>
                             <li>Odvolanie súhlasu – stane sa účinným dňom odvolania</li>

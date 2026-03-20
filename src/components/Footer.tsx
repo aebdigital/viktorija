@@ -3,25 +3,25 @@
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
+function NavLink({ href, label, pathname }: { href: string; label: string; pathname: string }) {
+    const isActive = pathname === href || (href.startsWith('/#') && pathname === '/');
+
+    return (
+        <a
+            href={href}
+            className={`transition-all duration-500 font-montserrat font-light text-sm
+                ${isActive
+                    ? 'text-[#EEE3CE] [text-shadow:0_0_12px_rgba(238,227,206,0.8)]'
+                    : 'text-[#EEE3CE] hover:[text-shadow:0_0_15px_rgba(238,227,206,0.6)] [text-shadow:0_0_5px_rgba(238,227,206,0.1)]'
+                }`}
+        >
+            {label}
+        </a>
+    );
+}
+
 export default function Footer() {
     const pathname = usePathname();
-
-    const NavLink = ({ href, label }: { href: string; label: string }) => {
-        const isActive = pathname === href || (href.startsWith('/#') && pathname === '/');
-
-        return (
-            <a
-                href={href}
-                className={`transition-all duration-500 font-montserrat font-light text-sm
-                    ${isActive
-                        ? 'text-[#EEE3CE] [text-shadow:0_0_12px_rgba(238,227,206,0.8)]'
-                        : 'text-[#EEE3CE] hover:[text-shadow:0_0_15px_rgba(238,227,206,0.6)] [text-shadow:0_0_5px_rgba(238,227,206,0.1)]'
-                    }`}
-            >
-                {label}
-            </a>
-        );
-    };
 
     return (
         <footer id="kontakt" className="bg-[#1D0E22] py-16 border-t border-white/10">
@@ -43,10 +43,10 @@ export default function Footer() {
                         <div className="space-y-6 pt-4">
                             <h4 className="font-marcellus text-[#EEE3CE] tracking-[0.2em] text-sm uppercase">NAVIGÁCIA</h4>
                             <nav className="flex flex-col gap-3">
-                                <NavLink href="/" label="Domov" />
-                                <NavLink href="/sluzby" label="Štúdio" />
-                                <NavLink href="#academy" label="Academy" />
-                                <NavLink href="/kontakt" label="Kontakt" />
+                                <NavLink href="/" label="Domov" pathname={pathname} />
+                                <NavLink href="/sluzby" label="Štúdio" pathname={pathname} />
+                                <NavLink href="#academy" label="Academy" pathname={pathname} />
+                                <NavLink href="/kontakt" label="Kontakt" pathname={pathname} />
                             </nav>
                         </div>
 
@@ -80,7 +80,7 @@ export default function Footer() {
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.0!2d17.12450597711311!3d48.147514250269094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c893f6282c159%3A0xcb0c29487a5d69b4!2sSal%C3%B3n%20Vikt%C3%B3ria!5e0!3m2!1ssk!2ssk!4v1738202400000!5m2!1ssk!2ssk"
                         width="100%"
                         height="100%"
-                        style={{ border: 0, filter: 'grayscale(1) contrast(0.9) brightness(1.1)' }}
+                        style={{ border: 0 }}
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"

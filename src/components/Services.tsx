@@ -6,7 +6,7 @@ const SERVICES = [
     {
         title: "PERMANENTNÝ MAKE-UP",
         subtitle: "Prirodzený a moderný, s rešpektom k anatómii tváre",
-        image: "/sluzby/permanent.jpg",
+        image: "/pery/PHOTO-2026-02-10-14-41-10.jpg",
     },
     {
         title: "ODSTRAŇOVANIE PMU",
@@ -19,7 +19,7 @@ const SERVICES = [
         image: "/sluzby/nastrelovanie.webp",
     },
     {
-        title: "KOZMETIKA & STAROSTLIVOSŤ",
+        title: "RITUÁLY TVÁRE",
         subtitle: "Ošetrenia pleti a kurátorovaný výber krémov a sér",
         image: "/sluzby/kozmetika.webp",
     },
@@ -27,7 +27,7 @@ const SERVICES = [
 
 export default function Services() {
     return (
-        <section id="sluzby" className="bg-main-bg py-24">
+        <section id="sluzby" className="py-24">
             <div className="w-[95vw] mx-auto">
                 <h2 className="font-marcellus text-4xl md:text-5xl text-center text-white mb-16 tracking-widest">
                     NAŠE <span className="text-gold-gradient">SLUŽBY</span>
