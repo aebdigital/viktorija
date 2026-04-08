@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { useState } from "react";
 import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import GoogleMap from "@/components/GoogleMap";
 
 export default function KontaktPage() {
     const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
@@ -130,15 +131,11 @@ export default function KontaktPage() {
 
                 {/* Map Section */}
                 <div className="relative h-[600px] w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.0!2d17.12450597711311!3d48.147514250269094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c893f6282c159%3A0xcb0c29487a5d69b4!2sSal%C3%B3n%20Vikt%C3%B3ria!5e0!3m2!1ssk!2ssk!4v1738202400000!5m2!1ssk!2ssk"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0, filter: 'grayscale(1) contrast(0.9) brightness(1.1)' }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="Salon Location"
+                    <GoogleMap
+                        title="Salón Viktória - kontakt mapa"
+                        extraMarkers={[
+                            { lat: 48.146789638941314, lng: 17.12874363688941, label: "NIVY", imageSrc: "/NIVY.webp", name: "NIVY centrum", address: "Mlynské Nivy 16, 821 09 Bratislava" },
+                        ]}
                     />
                 </div>
             </div>

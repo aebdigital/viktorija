@@ -9,12 +9,6 @@ export default function SiteBackdrop() {
             <div className="test2-page-background__blob test2-page-background__blob--light-3" />
             <div className="test2-page-background__blob test2-page-background__blob--mid-1" />
             <div className="test2-page-background__blob test2-page-background__blob--mid-2" />
-            <div className="test2-page-background__blob test2-page-background__blob--dark-1" />
-            <div className="test2-page-background__blob test2-page-background__blob--dark-2" />
-            <div className="test2-page-background__blob test2-page-background__blob--dark-3" />
-            <div className="test2-page-background__blob test2-page-background__blob--dark-4" />
-            <div className="test2-page-background__blob test2-page-background__blob--dark-5" />
-            <div className="test2-page-background__blob test2-page-background__blob--dark-6" />
 
             <div className="test2-page-background__vignette" />
         </div>

@@ -7,11 +7,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MAIN_SERVICES = [
-    { id: "pmu", label: "Permanentný Make-up", href: "/sluzby/permanentny-makeup", image: "/pery/PHOTO-2026-02-10-14-41-10.jpg" },
-    { id: "removal", label: "Odstraňovanie PMU", href: "/sluzby/odstranovanie-pmu", image: "/sluzby/odstranenie.jpeg" },
-    { id: "piercing", label: "Nastreľovanie náušníc", href: "/sluzby/nastrelovanie-nausnic", image: "/nastrelovanie/e38dda3c-d932-43cb-8f1d-3b15663e716d.JPG" },
-    { id: "cosmetics", label: "Rituály tváre", href: "/sluzby/kozmetika", image: "/sluzby/kozmetika.webp" },
-    { id: "creams", label: "Krémy a Séra", href: "/sluzby/kremy-sera", image: "/sluzby/kozmetika.webp" }
+    { id: "pmu", label: "Permanentný Make-up", href: "/sluzby/permanentny-makeup", image: "/pery/PHOTO-2026-02-10-14-41-10.jpg", position: "center center" },
+    { id: "removal", label: "Odstraňovanie PMU", href: "/sluzby/odstranovanie-pmu", image: "/sluzby/odstranenie.jpeg", position: "center 75%" },
+    { id: "piercing", label: "Nastreľovanie náušníc", href: "/sluzby/nastrelovanie-nausnic", image: "/nastrelovanie/e38dda3c-d932-43cb-8f1d-3b15663e716d.JPG", position: "center 35%" },
+    { id: "cosmetics", label: "Rituály tváre", href: "/sluzby/kozmetika", image: "/sluzby/kozmetika.webp", position: "center center" },
+    { id: "creams", label: "Skincare routine", href: "/sluzby/kremy-sera", image: "/sluzby/kozmetika.webp", position: "center center" }
 ];
 
 export default function ServicesSidebar() {
@@ -44,6 +44,7 @@ export default function ServicesSidebar() {
                                     alt="Active Category"
                                     fill
                                     className="object-cover"
+                                    style={{ objectPosition: activeService.position }}
                                 />
                             </div>
                             <div className="absolute inset-0 bg-black/40" />
@@ -83,6 +84,7 @@ export default function ServicesSidebar() {
                                                     alt={service.label}
                                                     fill
                                                     className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                    style={{ objectPosition: service.position }}
                                                 />
                                             </div>
                                             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors" />
@@ -118,6 +120,7 @@ export default function ServicesSidebar() {
                                     alt={service.label}
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    style={{ objectPosition: service.position }}
                                 />
                             )}
                         </div>

@@ -57,7 +57,7 @@ export default function PmuOverviewContent() {
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-colors duration-300" />
                             <div className="absolute inset-0 flex items-end justify-center p-4 md:p-6">
-                                <span className="font-marcellus text-sm md:text-lg uppercase tracking-widest text-white group-hover:text-gold transition-colors duration-300 text-center">
+                                <span className="relative font-marcellus text-sm md:text-lg uppercase tracking-widest text-white group-hover:text-gold transition-colors duration-300 text-center after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-current after:origin-left after:scale-x-0 after:transition-transform after:duration-300 group-hover:after:scale-x-100">
                                     {sub.label}
                                 </span>
                             </div>

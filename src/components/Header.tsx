@@ -25,9 +25,10 @@ function NavLink({ label, href }: NavItem) {
             ) : (
                 <Link
                     href={href}
-                    className={`font-marcellus uppercase tracking-widest text-xl transition-all duration-500 no-underline block text-[#1D0E22]
+                    className={`relative font-marcellus uppercase tracking-widest text-xl transition-all duration-500 no-underline block text-[#1D0E22]
+                        after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-[#1D0E22] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100
                         ${isActive
-                            ? '[text-shadow:0_0_30px_rgba(238,227,206,1),0_0_15px_rgba(238,227,206,0.9),0_0_60px_rgba(238,227,206,0.6),0_0_80px_rgba(218,197,156,0.3)]'
+                            ? '[text-shadow:0_0_30px_rgba(238,227,206,1),0_0_15px_rgba(238,227,206,0.9),0_0_60px_rgba(238,227,206,0.6),0_0_80px_rgba(218,197,156,0.3)] after:scale-x-100'
                             : 'hover:[text-shadow:0_0_20px_rgba(238,227,206,0.9),0_0_10px_rgba(238,227,206,0.7),0_0_40px_rgba(238,227,206,0.4)]'
                         }`}
                 >
@@ -151,7 +152,7 @@ export default function Header() {
                                         <Link
                                             href={item.href}
                                             onClick={() => setIsMenuOpen(false)}
-                                            className="font-marcellus uppercase tracking-widest text-3xl text-[#1D0E22] hover:text-gold transition-colors"
+                                            className="relative font-marcellus uppercase tracking-widest text-3xl text-[#1D0E22] hover:text-gold transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-current after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
                                         >
                                             {item.label}
                                         </Link>

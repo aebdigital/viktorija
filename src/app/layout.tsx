@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   title: "Salón Viktória | Kozmetický Salón",
   description: "Profesionálny kozmetický salón, permanentný make-up a estetické služby.",
   icons: {
-    icon: '/favicon.png',
+    icon: '/output-onlinepngtools-removebg-preview.png',
   },
 };
 
@@ -45,7 +45,7 @@ export default function RootLayout({
     <html lang="sk">
       <body
         className={`${marcellus.variable} ${montserrat.variable} ${alexBrush.variable} ${prociono.variable} antialiased`}
-        style={{ backgroundColor: "#A9AFB9" }}
+        style={{ backgroundColor: "#9da0aa" }}
       >
         <SiteBackdrop />
         <SmoothScroller>

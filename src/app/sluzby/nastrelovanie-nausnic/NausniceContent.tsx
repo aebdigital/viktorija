@@ -1,10 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import Lightbox from "@/components/Lightbox";
 import ContactForm from "../_components/ContactForm";
 import StickyCennikButton from "../_components/StickyCennikButton";
+
+const HERO_VIDEOS = [
+    "/New-things/nausnice/nausnice3.mp4",
+    "/New-things/nausnice/nausnice.mp4",
+    "/New-things/nausnice/IMG_1800.mp4",
+];
 
 const DETI_IMAGES = [
     "/nausnice/01e4bd6f-6903-4861-8f3b-4df83439789c.JPG",
@@ -53,6 +60,40 @@ export default function NausniceContent() {
         index: 0,
     });
 
+    const [videoLightbox, setVideoLightbox] = useState<{ isOpen: boolean; src: string }>({ isOpen: false, src: "" });
+    const videoLightboxRef = useRef<HTMLVideoElement>(null);
+
+    const openVideoLightbox = (src: string) => {
+        setVideoLightbox({ isOpen: true, src });
+        setTimeout(() => {
+            if (videoLightboxRef.current) {
+                // First video (nausnice3) is loud, keep it quiet
+                videoLightboxRef.current.volume = src === HERO_VIDEOS[0] ? 0.05 : 0.5;
+            }
+        }, 50);
+    };
+
+    const closeVideoLightbox = () => {
+        setVideoLightbox({ isOpen: false, src: "" });
+    };
+
+    const handleVideoLightboxKey = useCallback((e: KeyboardEvent) => {
+        if (e.key === "Escape") closeVideoLightbox();
+    }, []);
+
+    useEffect(() => {
+        if (videoLightbox.isOpen) {
+            document.body.style.overflow = "hidden";
+            window.addEventListener("keydown", handleVideoLightboxKey);
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+            window.removeEventListener("keydown", handleVideoLightboxKey);
+        };
+    }, [videoLightbox.isOpen, handleVideoLightboxKey]);
+
     const openLightbox = (images: string[], index: number) => {
         setLightbox({ isOpen: true, images, index });
     };
@@ -74,13 +115,15 @@ export default function NausniceContent() {
     return (
         <div className="flex flex-col gap-8">
             <div className="grid grid-cols-3 gap-3 w-full">
-                {HERO_IMAGES.map((src, idx) => (
-                    <div key={idx} className="relative h-[200px] md:h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-                        <Image
+                {HERO_VIDEOS.map((src, idx) => (
+                    <div key={idx} className="relative h-[200px] md:h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-2xl cursor-pointer" onClick={() => openVideoLightbox(src)}>
+                        <video
                             src={src}
-                            alt={`Nastreľovanie náušníc ${idx + 1}`}
-                            fill
-                            className="object-cover"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            className="w-full h-full object-cover"
                         />
                     </div>
                 ))}
@@ -283,6 +326,50 @@ export default function NausniceContent() {
                 onNext={nextImage}
                 onPrev={prevImage}
             />
+
+            {/* Video Lightbox */}
+            <AnimatePresence>
+                {videoLightbox.isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-xl"
+                        onClick={closeVideoLightbox}
+                    >
+                        <button
+                            onClick={closeVideoLightbox}
+                            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors z-[110]"
+                            aria-label="Close"
+                        >
+                            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                        <div
+                            className="relative w-full max-w-3xl mx-auto p-4 md:p-12"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                            >
+                                <video
+                                    ref={videoLightboxRef}
+                                    src={videoLightbox.src}
+                                    controls
+                                    autoPlay
+                                    playsInline
+                                    className="w-full max-h-[90vh] rounded-xl"
+                                />
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
