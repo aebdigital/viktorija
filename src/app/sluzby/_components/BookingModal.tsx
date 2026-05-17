@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Phone, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { X, Phone, CheckCircle, AlertCircle, Loader2, MessageSquare } from "lucide-react";
 import Image from "next/image";
 import CalendarPicker from "./CalendarPicker";
 import { supabase, TimeSlot } from "@/lib/supabase";
@@ -15,16 +15,18 @@ const MONTHS_SK = [
 interface BookingModalProps {
     isOpen: boolean;
     onClose: () => void;
+    title?: string;
+    defaultMessage?: string;
 }
 
-export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
+export default function BookingModal({ isOpen, onClose, title = "Objednať sa", defaultMessage = "" }: BookingModalProps) {
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
     const [selectedSlot, setSelectedSlot] = useState<TimeSlot | null>(null);
     const [wantCustomDate, setWantCustomDate] = useState(false);
     const [customDate, setCustomDate] = useState("");
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
-    const [message, setMessage] = useState("");
+    const [message, setMessage] = useState(defaultMessage);
     const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
     const [errorMsg, setErrorMsg] = useState("");
 
@@ -54,11 +56,11 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             setCustomDate("");
             setName("");
             setPhone("");
-            setMessage("");
+            setMessage(defaultMessage);
             setStatus("idle");
             setErrorMsg("");
         }
-    }, [isOpen]);
+    }, [isOpen, defaultMessage]);
 
     const formatDate = (date: Date) => {
         return `${date.getDate()}. ${MONTHS_SK[date.getMonth()]} ${date.getFullYear()}`;
@@ -119,6 +121,17 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         }
     };
 
+    const handleWhatsAppRedirect = () => {
+        const dateStr = selectedDate ? formatDate(selectedDate) : "Individuálny termín";
+        const timeStr = selectedSlot ? formatTime(selectedSlot.time) : customDate;
+        
+        const text = `Dobrý deň, rada by som si potvrdila rezerváciu v Salóne Viktória.\n\n👤 Meno: ${name}\n📞 Telefón: ${phone}\n📅 Termín: ${dateStr}\n⏰ Čas: ${timeStr}${message ? `\n\n💬 Správa: ${message}` : ''}`;
+        
+        const encodedText = encodeURIComponent(text);
+        const whatsappUrl = `https://wa.me/421907796562?text=${encodedText}`;
+        window.open(whatsappUrl, "_blank");
+    };
+
     return (
         <AnimatePresence>
             {isOpen && (
@@ -141,7 +154,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                         {/* Header */}
                         <div className="p-6 border-b border-white/10 flex justify-between items-center">
                             <h3 className="font-marcellus text-gold text-xl uppercase tracking-widest">
-                                Objednať sa
+                                {title}
                             </h3>
                             <button
                                 onClick={onClose}
@@ -164,14 +177,23 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                         Ďakujeme!
                                     </h4>
                                     <p className="font-montserrat text-white/70 text-sm max-w-sm">
-                                        Vaša rezervácia bola odoslaná. Ozvem sa Vám čo najskôr na potvrdenie termínu.
+                                        Vaša rezervácia bola odoslaná. Pre rýchlejšie potvrdenie ma môžete kontaktovať priamo cez WhatsApp.
                                     </p>
-                                    <button
-                                        onClick={onClose}
-                                        className="mt-4 px-8 py-3 bg-gold text-[#1D0E22] font-marcellus uppercase tracking-widest rounded-lg hover:bg-gold/90 transition-colors text-sm"
-                                    >
-                                        Zavrieť
-                                    </button>
+                                    <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm pt-4">
+                                        <button
+                                            onClick={handleWhatsAppRedirect}
+                                            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-marcellus uppercase tracking-widest rounded-lg hover:bg-[#20ba56] transition-colors text-sm"
+                                        >
+                                            <MessageSquare className="w-4 h-4" />
+                                            WhatsApp
+                                        </button>
+                                        <button
+                                            onClick={onClose}
+                                            className="flex-1 px-6 py-3 bg-white/10 text-white font-marcellus uppercase tracking-widest rounded-lg hover:bg-white/20 transition-colors text-sm"
+                                        >
+                                            Zavrieť
+                                        </button>
+                                    </div>
                                 </motion.div>
                             ) : (
                                 <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8">
@@ -193,7 +215,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                             </p>
                                             <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-gold/40 shadow-lg">
                                                 <Image
-                                                    src="/permanent-obocie/rezervacia.jpg"
+                                                    src="/sluzby/rezervacia.jpg"
                                                     alt="Viktória"
                                                     fill
                                                     className="object-cover"

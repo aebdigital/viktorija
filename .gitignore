@@ -44,3 +44,6 @@ next-env.d.ts
 *.MOV
 *.MP4
 *.mp4
+
+# Quarantined / unused media (kept locally for review, do not commit)
+/public/_unused/

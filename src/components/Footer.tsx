@@ -33,7 +33,7 @@ export default function Footer() {
                         {/* Brand */}
                         <div className="relative w-full h-32 md:h-48">
                             <Image
-                                src="/output-onlinepngtools-removebg-preview.png"
+                                src="/shared/output-onlinepngtools-removebg-preview.png"
                                 alt="Viktorija Kendra"
                                 fill
                                 className="object-contain md:object-left"
@@ -80,7 +80,7 @@ export default function Footer() {
                     <GoogleMap
                         title="Salón Viktória - mapa vo footeri"
                         extraMarkers={[
-                            { lat: 48.146789638941314, lng: 17.12874363688941, label: "NIVY", imageSrc: "/NIVY.webp", name: "NIVY centrum", address: "Mlynské Nivy 16, 821 09 Bratislava" },
+                            { lat: 48.146789638941314, lng: 17.12874363688941, label: "NIVY", imageSrc: "/shared/NIVY.webp", name: "NIVY centrum", address: "Mlynské Nivy 16, 821 09 Bratislava" },
                         ]}
                     />
                 </div>

@@ -9,7 +9,7 @@ const BLOG_POSTS = [
         id: 4,
         title: "Čo sa deje s pokožkou v procese permanentného make-upu",
         excerpt: "Pokožka, pigment, ihla a ruky artista – štyria aktéri, ktorí vytvárajú prirodzený permanentný make-up.",
-        image: "/blog/co-sa-deje/a447c5d5-1bd1-40a7-8ceb-e2d5d599c470.JPG",
+        image: "/blog/[slug]/a447c5d5-1bd1-40a7-8ceb-e2d5d599c470.JPG",
         slug: "co-sa-deje-s-pokozkou-v-procese-pmu",
         content: `
             <div class="my-10 space-y-8">
@@ -20,7 +20,7 @@ const BLOG_POSTS = [
                 </div>
                 <div class="max-w-lg rounded-2xl overflow-hidden shadow-2xl border border-black/5">
                     <video
-                        src="/blog/co-sa-deje/45132545-96fe-4e0e-ab90-8913ff71f926.MP4"
+                        src="https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/45132545-96fe-4e0e-ab90-8913ff71f926.MP4"
                         controls
                         playsInline
                         loop
@@ -53,7 +53,7 @@ const BLOG_POSTS = [
                     <p>Tieto zložky sa do niekoľkých týždňov vstrebú telom. V pokožke zostáva len samotné farbivo – jemný „farebný piesok".</p>
                 </div>
                 <div>
-                    <img src="/blog/co-sa-deje/6575bcfd-aaaf-493a-b8f9-c2279835e8d9.JPG" alt="Pigment detail" class="rounded-2xl shadow-xl w-full aspect-square object-cover" />
+                    <img src="/blog/[slug]/6575bcfd-aaaf-493a-b8f9-c2279835e8d9.JPG" alt="Pigment detail" class="rounded-2xl shadow-xl w-full aspect-square object-cover" />
                 </div>
             </div>
 
@@ -70,7 +70,7 @@ const BLOG_POSTS = [
                     <p>Ide o jemnú, kontrolovanú prácu, nie o tlak.</p>
                 </div>
                 <div>
-                    <img src="/blog/co-sa-deje/55f93148-2ebd-4ebe-b0b0-dde1a07066a5.JPG" alt="Ihla detail" class="rounded-2xl shadow-xl w-full aspect-square object-cover" />
+                    <img src="/blog/[slug]/55f93148-2ebd-4ebe-b0b0-dde1a07066a5.JPG" alt="Ihla detail" class="rounded-2xl shadow-xl w-full aspect-square object-cover" />
                 </div>
             </div>
 
@@ -109,20 +109,20 @@ const BLOG_POSTS = [
         id: 5,
         title: "Komplikácie pri permanentnom make-upe",
         excerpt: "Najčastejšou komplikáciou je neodborne vykonaný permanentný make-up. Riešením takýchto stavov je odstránenie pigmentu.",
-        image: "/blog/co-sa-deje/komplikacie/9e62ada0-eb59-4b9d-b33b-0de486fc9f7b.JPG",
+        image: "/blog/[slug]/9e62ada0-eb59-4b9d-b33b-0de486fc9f7b.JPG",
         slug: "komplikacie-pri-permanentnom-make-upe",
         content: `
             <p>Najčastejšou komplikáciou je neodborne vykonaný permanentný make-up. Výsledok potom pôsobí neesteticky, nekorešponduje s tvárou klientky a namiesto toho, aby vzhľad kultivoval a harmonizoval, ho opticky znehodnocuje. Môže dôjsť k asymetrii, narušeniu proporcií, nesprávnej voľbe pigmentu alebo k jeho nadmernému množstvu. Osobitnou komplikáciou je aj inverzia pigmentu, teda nežiaduca zmena farebného tónu v priebehu času, prípadne jeho podkožné rozpitie spôsobené nesprávnou hĺbkou uloženia.</p>
 
             <div class="my-10 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border border-black/5">
-                    <img src="/blog/co-sa-deje/komplikacie/230d70c8-bc90-4bf3-a459-5dd54347621e.JPG" alt="Komplikácia PMU 1" class="absolute inset-0 w-full h-full object-cover" />
+                    <img src="/blog/[slug]/230d70c8-bc90-4bf3-a459-5dd54347621e.JPG" alt="Komplikácia PMU 1" class="absolute inset-0 w-full h-full object-cover" />
                 </div>
                 <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border border-black/5">
-                    <img src="/blog/co-sa-deje/komplikacie/a1cc8370-5a72-4ecc-8e40-49e761b52186.JPG" alt="Komplikácia PMU 2" class="absolute inset-0 w-full h-full object-cover" />
+                    <img src="/blog/[slug]/a1cc8370-5a72-4ecc-8e40-49e761b52186.JPG" alt="Komplikácia PMU 2" class="absolute inset-0 w-full h-full object-cover" />
                 </div>
                 <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border border-black/5">
-                    <img src="/blog/co-sa-deje/komplikacie/63a2c206-6e1a-4250-a1c4-9b4edc368c78.JPG" alt="Komplikácia PMU 3" class="absolute inset-0 w-full h-full object-cover" />
+                    <img src="/blog/[slug]/63a2c206-6e1a-4250-a1c4-9b4edc368c78.JPG" alt="Komplikácia PMU 3" class="absolute inset-0 w-full h-full object-cover" />
                 </div>
             </div>
 
@@ -137,13 +137,13 @@ const BLOG_POSTS = [
 
             <div class="my-10 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border border-black/5">
-                    <img src="/Laser/8b7e97fa-b4cb-49f3-9c88-fbb9e05b62e3.JPG" alt="Jazva PMU 1" class="absolute inset-0 w-full h-full object-cover" />
+                    <img src="/blog/[slug]/8b7e97fa-b4cb-49f3-9c88-fbb9e05b62e3.JPG" alt="Jazva PMU 1" class="absolute inset-0 w-full h-full object-cover" />
                 </div>
                 <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border border-black/5">
-                    <img src="/Laser/d8a809c0-0bd2-40c7-bd48-04e6e9e875a8.JPG" alt="Jazva PMU 2" class="absolute inset-0 w-full h-full object-cover" />
+                    <img src="/blog/[slug]/d8a809c0-0bd2-40c7-bd48-04e6e9e875a8.JPG" alt="Jazva PMU 2" class="absolute inset-0 w-full h-full object-cover" />
                 </div>
                 <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border border-black/5">
-                    <img src="/Laser/fe779931-a74e-4009-a0f1-f0ba8c5c6f24.JPG" alt="Jazva PMU 3" class="absolute inset-0 w-full h-full object-cover" />
+                    <img src="/blog/[slug]/fe779931-a74e-4009-a0f1-f0ba8c5c6f24.JPG" alt="Jazva PMU 3" class="absolute inset-0 w-full h-full object-cover" />
                 </div>
             </div>
 
@@ -153,7 +153,7 @@ const BLOG_POSTS = [
                     <p>Pred každým zákrom je nevyhnutné dôkladne skontrolovať pracovnú oblasť. Artistka musí posúdiť prítomnosť kožných výrastkov, novotvarov, znamienok, dermatitíd, papilómov, bradavíc či aktívneho herpesu. Permanentný make-up sa vykonáva výhradne na zdravej, čistej a neporušenej pokožke. Zodpovedná diagnostika pred zákrom je základom bezpečnosti, profesionálnej etiky aj kvalitného výsledku.</p>
                 </div>
                 <div>
-                    <img src="/blog/co-sa-deje/komplikacie/9e62ada0-eb59-4b9d-b33b-0de486fc9f7b.JPG" alt="Kontrola oblasti" class="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]" />
+                    <img src="/blog/[slug]/9e62ada0-eb59-4b9d-b33b-0de486fc9f7b.JPG" alt="Kontrola oblasti" class="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]" />
                 </div>
             </div>
 
@@ -165,7 +165,7 @@ const BLOG_POSTS = [
         id: 6,
         title: "Laser a remover",
         excerpt: "Odstraňovanie nežiadúceho permanentného make-upu je odborný proces, ktorý rešpektuje biologické zákonitosti kože a imunitného systému.",
-        image: "/Laser-pmu-odstranenie/def471a9-c59d-4981-9d9a-4e453c6a9e82.JPG",
+        image: "/blog/[slug]/def471a9-c59d-4981-9d9a-4e453c6a9e82.JPG",
         slug: "laser-a-remover",
         content: `
             <p>Laserovému odstraňovaniu pigmentov sa venujem od roku 2014. Odstraňovanie PMU je odborný proces, ktorý rešpektuje biologické zákonitosti kože a imunitného systému.</p>
@@ -184,7 +184,7 @@ const BLOG_POSTS = [
                 </div>
                 <div class="relative aspect-[9/16] w-full max-w-[280px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-black/5">
                     <video 
-                        src="/VIDEO-2026-02-11-17-21-32.mp4" 
+                        src="https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/VIDEO-2026-02-11-17-21-32.mp4" 
                         controls 
                         playsInline 
                         loop 

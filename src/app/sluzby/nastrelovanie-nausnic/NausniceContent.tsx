@@ -8,45 +8,39 @@ import ContactForm from "../_components/ContactForm";
 import StickyCennikButton from "../_components/StickyCennikButton";
 
 const HERO_VIDEOS = [
-    "/New-things/nausnice/nausnice3.mp4",
-    "/New-things/nausnice/nausnice.mp4",
-    "/New-things/nausnice/IMG_1800.mp4",
+    "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/nausnice3.mp4",
+    "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/nausnice.mp4",
+    "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/IMG_1800.mp4",
 ];
 
 const DETI_IMAGES = [
-    "/nausnice/01e4bd6f-6903-4861-8f3b-4df83439789c.JPG",
-    "/nausnice/52fb1b1b-edf0-4591-82b1-35000de4e93b.JPG",
-    "/nausnice/70d67b4b-1612-4a3a-b87a-d49b55581f77.JPG",
-    "/nausnice/891f9025-9428-47c5-ae68-59bb6a95c8a7.JPG",
-    "/nausnice/9e2587c7-89a4-46e6-9d3f-74d5ff171154.JPG",
-    "/nausnice/b0d6005a-de50-4916-998e-ccb3654e3028.JPG",
-    "/nausnice/b05691c0-20db-4093-afa7-883f5d28dcb1.JPG",
-    "/nausnice/f2954987-f9e9-4131-8638-04771d3d09a8.JPG",
+    "/sluzby/nastrelovanie-nausnic/1.jpg",
+    "/sluzby/nastrelovanie-nausnic/2.jpg",
+    "/sluzby/nastrelovanie-nausnic/3.jpg",
+    "/sluzby/nastrelovanie-nausnic/4.jpg",
+    "/sluzby/nastrelovanie-nausnic/5.jpg",
+    "/sluzby/nastrelovanie-nausnic/6.jpg",
+    "/sluzby/nastrelovanie-nausnic/7.jpg",
+    "/sluzby/nastrelovanie-nausnic/8.jpg",
 ];
 
 const DOSPELI_IMAGES = [
-    "/nausnice/14cb9252-4abd-439e-ac14-4e0edcfad1a0.JPG",
-    "/nausnice/39039543-96c5-48e4-8244-017c08a9ea1e.JPG",
-    "/nausnice/45b18e58-573a-41af-b614-66f17df9eda4.JPG",
-    "/nausnice/480ba2c7-5bbf-4df5-b39e-f4493d48053b.JPG",
-    "/nausnice/512600a0-0ece-447e-bb79-4c08c735e8f5.JPG",
-    "/nausnice/69aaf1c8-0d9d-4da9-b016-f3dac1b23019.JPG",
-    "/nausnice/6a5074f1-0356-41d7-be23-bd13d6fb7c70.JPG",
-    "/nausnice/b89ed3be-a60d-4897-95cf-373ebac2a6fb.JPG",
-    "/nausnice/8cb9ed87-7357-4ca2-a514-c37fbc56dfab.JPG",
-    "/nausnice/8e251a43-a6dd-4587-9f4d-3b562c023fdc.JPG",
-    "/nausnice/9782a908-a27c-4b13-8ca8-b541b2fccf51.JPG",
-    "/nausnice/d4cf2eed-10bd-46c2-89d6-c8e512b025ce.JPG",
-    "/nausnice/df68efe7-1968-4149-a71c-d9655700c82e.JPG",
-    "/nausnice/ed0cedfd-a60b-4997-8eb8-736b3fd80ce6.JPG",
-    "/nausnice/f40bcc86-e861-40be-ba38-f43f51a40bc5.JPG",
-    "/nausnice/ff9e8bd4-bdd0-431c-b1b9-6d5c23aa57fd.JPG",
-];
-
-const HERO_IMAGES = [
-    "/nausnice/d54e7785-5c7b-4972-af15-20b56a815fbf.JPG",
-    "/nausnice/ab8f196d-7887-43c9-8222-d77a018c23e7.JPG",
-    "/nausnice/e7ee11c6-ce20-49e0-89eb-795972113b32.JPG",
+    "/sluzby/nastrelovanie-nausnic/9.jpg",
+    "/sluzby/nastrelovanie-nausnic/10.jpg",
+    "/sluzby/nastrelovanie-nausnic/11.jpg",
+    "/sluzby/nastrelovanie-nausnic/12.jpg",
+    "/sluzby/nastrelovanie-nausnic/13.jpg",
+    "/sluzby/nastrelovanie-nausnic/14.jpg",
+    "/sluzby/nastrelovanie-nausnic/15.jpg",
+    "/sluzby/nastrelovanie-nausnic/16.jpg",
+    "/sluzby/nastrelovanie-nausnic/17.jpg",
+    "/sluzby/nastrelovanie-nausnic/18.jpg",
+    "/sluzby/nastrelovanie-nausnic/19.jpg",
+    "/sluzby/nastrelovanie-nausnic/20.jpg",
+    "/sluzby/nastrelovanie-nausnic/21.jpg",
+    "/sluzby/nastrelovanie-nausnic/22.jpg",
+    "/sluzby/nastrelovanie-nausnic/23.jpg",
+    "/sluzby/nastrelovanie-nausnic/24.jpg",
 ];
 
 export default function NausniceContent() {

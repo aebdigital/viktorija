@@ -4,13 +4,14 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-const HERO_VIDEO = "/New-things/newvid.mp4.mp4";
-const HERO_IMAGE = "/sluzby/kozmetika.webp";
+const HERO_VIDEO = "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/ritualy.mp4";
+const HERO_IMAGE = "/sluzby/kozmetika/kozmetika.webp";
 
 interface Procedure {
     id: string;
     title: string;
     image: string;
+    video?: string;
     imagePosition?: string;
     badge?: string;
     body: React.ReactNode;
@@ -20,7 +21,8 @@ const PROCEDURES: Procedure[] = [
     {
         id: "mezoboost",
         title: "Mezoboost a nano kolagénové nite",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
+        video: "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/mezoboost.mp4",
         badge: "35+",
         body: (
             <div className="space-y-4">
@@ -46,7 +48,8 @@ const PROCEDURES: Procedure[] = [
     {
         id: "exozomy",
         title: "Exozómy",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
+        video: "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/exosome-system.mp4",
         badge: "45+",
         body: (
             <div className="space-y-4">
@@ -69,7 +72,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "carbonovy-peeling",
         title: "Carbonový peeling",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
         badge: "22+",
         body: (
             <div className="space-y-4">
@@ -83,7 +86,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "dermapeels",
         title: "Expert Dermapeels – chemický peeling",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
         badge: "30+",
         body: (
             <div className="space-y-4">
@@ -102,7 +105,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "timeless",
         title: "Timeless Prodigi",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
         badge: "40+",
         body: (
             <div className="space-y-4">
@@ -119,7 +122,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "cistenie",
         title: "Čistenie pleti, Pureexpert",
-        image: "/New-things/PHOTO-2026-03-23-11-01-44.jpg",
+        image: "/sluzby/kozmetika/PHOTO-2026-03-23-11-01-44.jpg",
         badge: "14+",
         body: (
             <div className="space-y-4">
@@ -136,7 +139,8 @@ const PROCEDURES: Procedure[] = [
     {
         id: "corrective",
         title: "Corrective – Lifting bez injekcií",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
+        video: "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/Corectiv.mp4",
         badge: "40+",
         body: (
             <div className="space-y-4">
@@ -166,7 +170,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "skin-sensation",
         title: "Skin Sensation (Luxury)",
-        image: "/New-things/PHOTO-2026-03-23-12-02-59.jpg",
+        image: "/sluzby/kozmetika/PHOTO-2026-03-23-12-02-59.jpg",
         badge: "40+",
         body: (
             <div className="space-y-4">
@@ -196,7 +200,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "hyaluronic",
         title: "Power Hyaluronic",
-        image: "/New-things/PHOTO-2026-03-23-12-22-46.jpg",
+        image: "/sluzby/kozmetika/PHOTO-2026-03-23-12-22-46.jpg",
         badge: "18+",
         body: (
             <div className="space-y-4">
@@ -214,7 +218,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "nevesta",
         title: "Pre nevestu – Hydra Lifting",
-        image: "/New-things/PHOTO-2026-03-23-12-54-06.jpg",
+        image: "/sluzby/kozmetika/PHOTO-2026-03-23-12-54-06.jpg",
         badge: "22+",
         body: (
             <div className="space-y-4">
@@ -231,7 +235,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "pre-probiotiká",
         title: "Pre & Probiotiká – Age Defense",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
         badge: "30+",
         body: (
             <div className="space-y-4">
@@ -249,7 +253,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "q10-rescue",
         title: "Q10 Rescue",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
         badge: "45+",
         body: (
             <div className="space-y-4">
@@ -269,7 +273,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "lightening",
         title: "Lightening Advanced Nácar",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
         badge: "40+",
         body: (
             <div className="space-y-4">
@@ -290,7 +294,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "golden-age",
         title: "Golden Age",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
         badge: "40+",
         body: (
             <div className="space-y-4">
@@ -308,7 +312,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "infinity",
         title: "Infinity",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/PHOTO-2026-04-03-21-08-46.jpg",
         badge: "45+",
         body: (
             <div className="space-y-4">
@@ -336,7 +340,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "rgnerin",
         title: "RGnerin",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
         badge: "40+",
         body: (
             <div className="space-y-4">
@@ -360,7 +364,8 @@ const PROCEDURES: Procedure[] = [
     {
         id: "excel-therapy",
         title: "Excel Therapy O₂ Cityproof",
-        image: "/sluzby/kozmetika.webp",
+        image: "/sluzby/kozmetika/kozmetika.webp",
+        video: "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/xcel_therapy.mp4",
         badge: "22+",
         body: (
             <div className="space-y-4">
@@ -378,7 +383,7 @@ const PROCEDURES: Procedure[] = [
     {
         id: "aquatherm",
         title: "Citlivá pleť – Skeyndor Aquatherm",
-        image: "/New-things/PHOTO-2026-03-23-13-19-02.jpg",
+        image: "/sluzby/kozmetika/PHOTO-2026-03-23-13-19-02.jpg",
         body: (
             <div className="space-y-4">
                 <p>Minerálna voda stimuluje metabolické funkcie pleti, najmä funkciu kožnej bariéry. Hlbokomorská voda obohatená o mikrozemské a stopové prvky podporuje prirodzenú rovnováhu pleti.</p>
@@ -540,13 +545,24 @@ export default function KozmetikaContent() {
                         className="group relative aspect-[3/4] overflow-hidden rounded-xl border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] text-left"
                     >
                         <div className="absolute inset-0">
-                            <Image
-                                src={proc.image}
-                                alt={proc.title}
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                style={proc.imagePosition ? { objectPosition: proc.imagePosition } : undefined}
-                            />
+                            {proc.video ? (
+                                <video
+                                    src={proc.video}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-full object-cover"
+                                />
+                            ) : (
+                                <Image
+                                    src={proc.image}
+                                    alt={proc.title}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    style={proc.imagePosition ? { objectPosition: proc.imagePosition } : undefined}
+                                />
+                            )}
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent group-hover:from-black/90 transition-colors duration-300" />
                         {proc.badge && (
@@ -624,15 +640,27 @@ export default function KozmetikaContent() {
                             className="relative bg-[#F5F5F0] rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            {/* Photo header */}
+                            {/* Photo/Video header */}
                             <div className="relative h-56 rounded-t-2xl overflow-hidden">
-                                <Image
-                                    src={active.image}
-                                    alt={active.title}
-                                    fill
-                                    className="object-cover"
-                                    style={active.imagePosition ? { objectPosition: active.imagePosition } : undefined}
-                                />
+                                {active.video ? (
+                                    <video
+                                        src={active.video}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        className="w-full h-full object-cover"
+                                        style={{ objectPosition: "center 60%" }}
+                                    />
+                                ) : (
+                                    <Image
+                                        src={active.image}
+                                        alt={active.title}
+                                        fill
+                                        className="object-cover"
+                                        style={active.imagePosition ? { objectPosition: active.imagePosition } : undefined}
+                                    />
+                                )}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                                 <div className="absolute bottom-4 left-6 right-12">
                                     <h4 className="font-marcellus text-2xl text-white uppercase tracking-wider leading-tight">

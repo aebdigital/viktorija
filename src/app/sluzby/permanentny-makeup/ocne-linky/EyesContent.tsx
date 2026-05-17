@@ -25,7 +25,7 @@ export default function EyesContent() {
                 {/* Large Detail Image */}
                 <div className="relative h-[300px] md:h-[500px] w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                     <Image
-                        src="/PMU-linky/PHOTO-2026-02-10-10-17-17.jpg"
+                        src="/sluzby/permanentny-makeup/ocne-linky/PHOTO-2026-02-10-10-17-17.jpg"
                         alt="Permanentný make-up očných liniek"
                         fill
                         className="object-cover"
@@ -62,15 +62,15 @@ export default function EyesContent() {
                         <div className="pt-8 border-t border-black/5">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 {[
-                                    "/PMU-linky/PHOTO-2026-02-10-10-17-17.jpg",
-                                    "/linka/PHOTO-2026-02-12-14-30-21.jpg",
-                                    "/PMU-linky/newlinka.jpg",
-                                    "/PMU-linky/c597af61-656a-4a9d-a148-359e7955ad2e.JPG",
-                                    "/PMU-linky/fd7c6036-aa32-4eb7-a553-8a59543b1273 copy.JPG",
-                                    "/PMU-linky/fe199ee0-a552-4844-8589-09ffcd1f0987.JPG",
-                                    "/linka/19d06e7e-4044-4150-b5b6-45d303b8d4ce.JPG",
-                                    "/PHOTO-2026-02-25-11-16-06.jpg",
-                                    "/Laser/27d7535b-db4f-40ba-9a15-18e6620c8044.JPG",
+                                    "/sluzby/permanentny-makeup/ocne-linky/PHOTO-2026-02-10-10-17-17.jpg",
+                                    "/sluzby/permanentny-makeup/ocne-linky/PHOTO-2026-02-12-14-30-21.jpg",
+                                    "/sluzby/permanentny-makeup/ocne-linky/newlinka.jpg",
+                                    "/sluzby/permanentny-makeup/ocne-linky/c597af61-656a-4a9d-a148-359e7955ad2e.JPG",
+                                    "/sluzby/permanentny-makeup/ocne-linky/fd7c6036-aa32-4eb7-a553-8a59543b1273 copy.JPG",
+                                    "/sluzby/permanentny-makeup/ocne-linky/fe199ee0-a552-4844-8589-09ffcd1f0987.JPG",
+                                    "/sluzby/permanentny-makeup/ocne-linky/19d06e7e-4044-4150-b5b6-45d303b8d4ce.JPG",
+                                    "/sluzby/permanentny-makeup/ocne-linky/PHOTO-2026-02-25-11-16-06.jpg",
+                                    "/sluzby/permanentny-makeup/ocne-linky/27d7535b-db4f-40ba-9a15-18e6620c8044.JPG",
                                 ].map((src, idx) => (
                                     <div
                                         key={idx}

@@ -47,9 +47,8 @@ const NAV_LEFT: NavItem[] = [
 const NAV_RIGHT: NavItem[] = [
     {
         label: "ACADEMY",
-        href: "/#academy"
+        href: "/academia"
     },
-    { label: "Test 2", href: "/test2" },
     { label: "Kontakt", href: "/kontakt" },
 ];
 
@@ -74,7 +73,7 @@ export default function Header() {
                     <Link href="/" onClick={() => setIsMenuOpen(false)}>
                         <div className="relative w-32 h-10">
                             <Image
-                                src="/ФИОЛ__1__page-0001-removebg-preview.png"
+                                src="/shared/ФИОЛ__1__page-0001-removebg-preview.png"
                                 alt="Viktorija Logo"
                                 fill
                                 className="object-contain"
@@ -95,7 +94,7 @@ export default function Header() {
                     <div className="relative w-40 md:w-60 h-12 md:h-20">
                         <Link href="/">
                             <Image
-                                src="/ФИОЛ__1__page-0001-removebg-preview.png"
+                                src="/shared/ФИОЛ__1__page-0001-removebg-preview.png"
                                 alt="Viktorija Logo"
                                 fill
                                 className="object-contain"

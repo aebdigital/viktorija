@@ -11,23 +11,23 @@ import { PlayCircle } from "lucide-react";
 const SERVICES = [
     {
         title: "PERMANENTNÝ MAKE-UP",
-        image: "/sluzby/permanent.jpg",
+        image: "/homepage/PHOTO-2026-02-10-14-41-10.jpg",
     },
     {
         title: "ODSTRAŇOVANIE PMU",
-        image: "/sluzby/odstranenie.jpeg",
+        image: "/homepage/odstranenie.jpeg",
     },
     {
         title: "NASTREĽOVANIE NÁUŠNÍC",
-        image: "/sluzby/nastrelovanie.webp",
+        image: "/homepage/e38dda3c-d932-43cb-8f1d-3b15663e716d.JPG",
     },
     {
         title: "RITUÁLY TVÁRE",
-        image: "/sluzby/kozmetika.webp",
+        image: "/homepage/kozmetika.webp",
     },
     {
         title: "KRÉMY a SÉRA",
-        image: "/sluzby/kremy.webp",
+        image: "/homepage/kozmetika.webp",
     },
 ];
 
@@ -109,7 +109,7 @@ export default function Hero() {
                     {/* Background Image */}
                     <div className="absolute inset-0 transition-transform duration-700 md:group-hover:scale-110">
                         <Image
-                            src="/IMG_1401.JPG"
+                            src="/homepage/IMG_1401.JPG"
                             alt="Studio Services Background"
                             fill
                             className="object-cover"
@@ -152,7 +152,7 @@ export default function Hero() {
                         >
                             <video
                                 ref={videoRef}
-                                src="/viktoria hero section vid.mp4"
+                                src="https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/homehero.mp4"
                                 loop
                                 playsInline
                                 className="w-full h-full object-cover"
@@ -170,7 +170,7 @@ export default function Hero() {
                                     onClick={startVideo}
                                 >
                                     <Image
-                                        src="/IMG_1422.JPG"
+                                        src="/shared/IMG_1422.JPG"
                                         alt="Video Preview"
                                         fill
                                         className="object-cover"
@@ -220,11 +220,11 @@ export default function Hero() {
                 </div>
 
                 {/* RIGHT COLUMN: Academia (from Services.tsx) */}
-                <div id="academy" className="group relative w-full h-[50vh] md:h-[90vh] overflow-hidden border border-white/10 cursor-pointer">
+                <Link href="/academia" id="academy" className="group relative w-full h-[50vh] md:h-[90vh] overflow-hidden border border-white/10 cursor-pointer block">
                     {/* Background Image */}
                     <div className="absolute inset-0 transition-transform duration-700 md:group-hover:scale-110">
                         <Image
-                            src="/vik2.jpg"
+                            src="/homepage/vik2.jpg"
                             alt="Academy Background"
                             fill
                             className="object-cover"
@@ -248,7 +248,7 @@ export default function Hero() {
 
 
                     </div>
-                </div>
+                </Link>
 
             </div>
         </section>

@@ -8,21 +8,21 @@ const BLOG_POSTS = [
         id: 1,
         title: "Čo sa deje s pokožkou v procese permanentného make-upu",
         excerpt: "Pokožka, pigment, ihla a ruky artista – štyria aktéri, ktorí vytvárajú prirodzený permanentný make-up.",
-        image: "/blog/co-sa-deje/a447c5d5-1bd1-40a7-8ceb-e2d5d599c470.JPG",
+        image: "/homepage/a447c5d5-1bd1-40a7-8ceb-e2d5d599c470.JPG",
         slug: "co-sa-deje-s-pokozkou-v-procese-pmu"
     },
     {
         id: 5,
         title: "Komplikácie pri permanentnom make-upe",
         excerpt: "Najčastejšou komplikáciou je neodborne vykonaný permanentný make-up. Riešením takýchto stavov je odstránenie pigmentu.",
-        image: "/blog/co-sa-deje/komplikacie/9e62ada0-eb59-4b9d-b33b-0de486fc9f7b.JPG",
+        image: "/homepage/9e62ada0-eb59-4b9d-b33b-0de486fc9f7b.JPG",
         slug: "komplikacie-pri-permanentnom-make-upe"
     },
     {
         id: 6,
         title: "Laser a remover",
         excerpt: "Odstraňovanie nežiadúceho permanentného make-upu je odborný proces, ktorý rešpektuje biologické zákonitosti kože.",
-        image: "/Laser-pmu-odstranenie/def471a9-c59d-4981-9d9a-4e453c6a9e82.JPG",
+        image: "/homepage/def471a9-c59d-4981-9d9a-4e453c6a9e82.JPG",
         slug: "laser-a-remover"
     },
 ];

@@ -5,10 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const PMU_SUBTABS = [
-    { label: "Obočie", href: "/sluzby/permanentny-makeup/obocie", image: "/permanent-obocie/m4.jpg", position: "70% center" },
-    { label: "Pery", href: "/sluzby/permanentny-makeup/pery", image: "/pery/PHOTO-2026-02-10-14-41-10.jpg" },
-    { label: "Očné linky", href: "/sluzby/permanentny-makeup/ocne-linky", image: "/PMU-linky/PHOTO-2026-02-10-10-17-17.jpg", position: "40% center" },
-    { label: "Dermopigmentácia", href: "/sluzby/permanentny-makeup/dermopigmentacia", image: "/dermopigmentacia.webp", position: "right center" }
+    { label: "Obočie", href: "/sluzby/permanentny-makeup/obocie", image: "/sluzby/m4.jpg", position: "70% center" },
+    { label: "Pery", href: "/sluzby/permanentny-makeup/pery", image: "/sluzby/PHOTO-2026-02-10-14-41-10.jpg" },
+    { label: "Očné linky", href: "/sluzby/permanentny-makeup/ocne-linky", image: "/sluzby/PHOTO-2026-02-10-10-17-17.jpg", position: "40% center" },
+    { label: "Dermopigmentácia", href: "/sluzby/permanentny-makeup/dermopigmentacia", image: "/sluzby/dermopigmentacia.webp", position: "right center" }
 ];
 
 export default function PmuSubSidebar({ variant = "both" }: { variant?: "mobile" | "desktop" | "both" }) {

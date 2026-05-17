@@ -7,9 +7,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MAIN_SERVICES = [
-    { id: "pmu", label: "Permanentný Make-up", href: "/sluzby/permanentny-makeup", image: "/pery/PHOTO-2026-02-10-14-41-10.jpg", position: "center center" },
+    { id: "pmu", label: "Permanentný Make-up", href: "/sluzby/permanentny-makeup", image: "/sluzby/PHOTO-2026-02-10-14-41-10.jpg", position: "center center" },
     { id: "removal", label: "Odstraňovanie PMU", href: "/sluzby/odstranovanie-pmu", image: "/sluzby/odstranenie.jpeg", position: "center 75%" },
-    { id: "piercing", label: "Nastreľovanie náušníc", href: "/sluzby/nastrelovanie-nausnic", image: "/nastrelovanie/e38dda3c-d932-43cb-8f1d-3b15663e716d.JPG", position: "center 35%" },
+    { id: "piercing", label: "Nastreľovanie náušníc", href: "/sluzby/nastrelovanie-nausnic", image: "/sluzby/e38dda3c-d932-43cb-8f1d-3b15663e716d.JPG", position: "center 35%" },
     { id: "cosmetics", label: "Rituály tváre", href: "/sluzby/kozmetika", image: "/sluzby/kozmetika.webp", position: "center center" },
     { id: "creams", label: "Skincare routine", href: "/sluzby/kremy-sera", image: "/sluzby/kozmetika.webp", position: "center center" }
 ];

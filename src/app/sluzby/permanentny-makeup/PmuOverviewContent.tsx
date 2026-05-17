@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { PlayCircle, PlayIcon, PauseIcon } from "lucide-react";
 
 const PMU_SUBTABS = [
-    { label: "Obočie", href: "/sluzby/permanentny-makeup/obocie", image: "/permanent-obocie/m4.jpg", position: "70% center" },
-    { label: "Pery", href: "/sluzby/permanentny-makeup/pery", image: "/pery/PHOTO-2026-02-10-14-41-10.jpg" },
-    { label: "Očné linky", href: "/sluzby/permanentny-makeup/ocne-linky", image: "/PMU-linky/PHOTO-2026-02-10-10-17-17.jpg", position: "40% center" },
-    { label: "Dermopigmentácia", href: "/sluzby/permanentny-makeup/dermopigmentacia", image: "/dermopigmentacia.webp", position: "65% center" }
+    { label: "Obočie", href: "/sluzby/permanentny-makeup/obocie", image: "/sluzby/permanentny-makeup/m4.jpg", position: "70% center" },
+    { label: "Pery", href: "/sluzby/permanentny-makeup/pery", image: "/sluzby/permanentny-makeup/PHOTO-2026-02-10-14-41-10.jpg" },
+    { label: "Očné linky", href: "/sluzby/permanentny-makeup/ocne-linky", image: "/sluzby/permanentny-makeup/PHOTO-2026-02-10-10-17-17.jpg", position: "40% center" },
+    { label: "Dermopigmentácia", href: "/sluzby/permanentny-makeup/dermopigmentacia", image: "/sluzby/permanentny-makeup/dermopigmentacia.webp", position: "65% center" }
 ];
 
 export default function PmuOverviewContent() {
@@ -106,7 +106,7 @@ export default function PmuOverviewContent() {
                         >
                             <video
                                 ref={videoRef}
-                                src="/be8d349d-d9c7-43a3-90c7-43512efb1731.MP4"
+                                src="https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/pmu.mp4"
                                 loop
                                 playsInline
                                 className="w-full h-full object-cover"
@@ -123,7 +123,7 @@ export default function PmuOverviewContent() {
                                     onClick={startVideo}
                                 >
                                     <Image
-                                        src="/IMG_1422.JPG"
+                                        src="/shared/IMG_1422.JPG"
                                         alt="Video Preview"
                                         fill
                                         className="object-cover"

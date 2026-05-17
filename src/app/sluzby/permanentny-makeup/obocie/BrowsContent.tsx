@@ -56,7 +56,7 @@ export default function BrowsContent() {
                     {/* Large Detail Image */}
                     <div className="relative h-[300px] md:h-[500px] w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                         <Image
-                            src="/permanent-obocie/m4.jpg"
+                            src="/sluzby/permanentny-makeup/obocie/m4.jpg"
                             alt="Permanentný make-up obočia"
                             fill
                             className="object-cover"
@@ -82,9 +82,9 @@ export default function BrowsContent() {
                             {/* 3 Clickable Category Boxes */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                                 {[
-                                    { id: "section-hyperrealisticke", label: "Hyperrealistické obočie", image: "/obocie-more/hyper3.JPG" },
-                                    { id: "section-pudrove", label: "Púdrové obočie", image: "/obocie-more/pud3.jpg" },
-                                    { id: "section-mineralne", label: "Púdrové obočie s minerálnymi pigmentmi", image: "/obocie-more/mineral.jpg" },
+                                    { id: "section-hyperrealisticke", label: "Hyperrealistické obočie", image: "/sluzby/permanentny-makeup/obocie/hyper3.JPG" },
+                                    { id: "section-pudrove", label: "Púdrové obočie", image: "/sluzby/permanentny-makeup/obocie/pud3.jpg" },
+                                    { id: "section-mineralne", label: "Púdrové obočie s minerálnymi pigmentmi", image: "/sluzby/permanentny-makeup/obocie/mineral.jpg" },
                                 ].map((cat) => (
                                     <button
                                         key={cat.id}
@@ -120,7 +120,7 @@ export default function BrowsContent() {
                                 </div>
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                     {[1, 2, 3, 4, 5, 6].map((i) => {
-                                        const mImages = [1, 2, 3, 4, 5, 6].map(n => `/permanent-obocie/m${n}.jpg`);
+                                        const mImages = [1, 2, 3, 4, 5, 6].map(n => `/sluzby/permanentny-makeup/obocie/m${n}.jpg`);
                                         return (
                                             <div key={`m${i}`} className="space-y-2">
                                                 <div
@@ -170,7 +170,7 @@ export default function BrowsContent() {
                             <div className="pt-8 border-t border-black/5">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     {[1, 2, 3].map((i) => {
-                                        const bImages = [1, 2, 3].map(n => `/permanent-obocie/b${n}.JPG`);
+                                        const bImages = [1, 2, 3].map(n => `/sluzby/permanentny-makeup/obocie/b${n}.JPG`);
                                         return (
                                             <div
                                                 key={`b${i}`}
@@ -188,7 +188,7 @@ export default function BrowsContent() {
                             <div className="space-y-2 pt-8 border-t border-black/5">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     {[1, 2, 3].map((i) => {
-                                        const nImages = ['/obocie-more/trio.JPG', '/permanent-obocie/n2.JPG', '/permanent-obocie/new-n3.jpg'];
+                                        const nImages = ['/sluzby/permanentny-makeup/obocie/trio.JPG', '/sluzby/permanentny-makeup/obocie/n2.JPG', '/sluzby/permanentny-makeup/obocie/new-n3.jpg'];
                                         return (
                                             <div
                                                 key={`n${i}`}
@@ -226,9 +226,9 @@ export default function BrowsContent() {
                             {/* Featured Photos */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 {[
-                                    { src: "/permanent-obocie/PHOTO-2026-02-05-17-26-46.jpg", label: "Púdrové obočie vytvára optický lifting a definovaný tvar.", alt: "Púdrové obočie" },
-                                    { src: "/permanent-obocie/PHOTO-2026-02-05-17-37-00.jpg", label: "Púdrové obočie a očné linky.", alt: "Púdrové obočie a očné linky" },
-                                    { src: "/permanent-obocie/n1.JPG", label: "Obočie po roku od aplikácie.", alt: "Obočie po roku" }
+                                    { src: "/sluzby/permanentny-makeup/obocie/PHOTO-2026-02-05-17-26-46.jpg", label: "Púdrové obočie vytvára optický lifting a definovaný tvar.", alt: "Púdrové obočie" },
+                                    { src: "/sluzby/permanentny-makeup/obocie/PHOTO-2026-02-05-17-37-00.jpg", label: "Púdrové obočie a očné linky.", alt: "Púdrové obočie a očné linky" },
+                                    { src: "/sluzby/permanentny-makeup/obocie/n1.JPG", label: "Obočie po roku od aplikácie.", alt: "Obočie po roku" }
                                 ].map((photo, idx, arr) => (
                                     <div key={idx} className="space-y-4">
                                         <div
@@ -246,14 +246,14 @@ export default function BrowsContent() {
                             <div className="pt-8 border-t border-black/5">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     {[3, 1, 2].map((i, idx) => {
-                                        const zImages = [3, 1, 2].map(n => `/permanent-obocie/z${n}.jpg`);
+                                        const zImages = [3, 1, 2].map(n => `/sluzby/permanentny-makeup/obocie/z${n}.jpg`);
                                         return (
                                             <div key={`z${i}`} className="space-y-4">
                                                 <div
                                                     className="relative aspect-[3/3.2] rounded-lg overflow-hidden border border-black/10 shadow-sm cursor-pointer "
                                                     onClick={() => openLightbox(zImages, idx)}
                                                 >
-                                                    <Image src={`/permanent-obocie/z${i}.jpg`} alt={`Obočie z${i}`} fill className="object-cover" />
+                                                    <Image src={`/sluzby/permanentny-makeup/obocie/z${i}.jpg`} alt={`Obočie z${i}`} fill className="object-cover" />
                                                 </div>
                                                 {i === 3 && (
                                                     <p className="text-center font-marcellus text-[#1D0E22] tracking-wide text-sm">

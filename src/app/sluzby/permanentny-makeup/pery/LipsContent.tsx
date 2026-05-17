@@ -37,7 +37,7 @@ export default function LipsContent() {
         }));
     };
 
-    const detailImage = "/pery/PHOTO-2026-02-10-14-41-10.jpg";
+    const detailImage = "/sluzby/permanentny-makeup/pery/PHOTO-2026-02-10-14-41-10.jpg";
 
     return (
         <>
@@ -94,9 +94,9 @@ export default function LipsContent() {
                             {/* 3 Clickable Technique Boxes */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                                 {[
-                                    { id: "section-viktorija-lips", label: "Viktorija Lips", image: "/viktoria=lips.JPG" },
-                                    { id: "section-korejske-pery", label: "Kórejské pery", image: "/korejske=pery.JPG" },
-                                    { id: "section-obnova-kontury", label: "Obnova kontúry pier", image: "/obnova-kontury%20pier.JPG" },
+                                    { id: "section-viktorija-lips", label: "Viktorija Lips", image: "/sluzby/permanentny-makeup/pery/viktoria=lips.JPG" },
+                                    { id: "section-korejske-pery", label: "Kórejské pery", image: "/sluzby/permanentny-makeup/pery/korejske=pery.JPG" },
+                                    { id: "section-obnova-kontury", label: "Obnova kontúry pier", image: "/sluzby/permanentny-makeup/pery/obnova-kontury%20pier.JPG" },
                                 ].map((cat) => (
                                     <button
                                         key={cat.id}
@@ -147,18 +147,18 @@ export default function LipsContent() {
                             <div className="pt-8">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     {[
-                                        "/pery/758e49a4-60f9-4b31-a5be-6dcb08c63042.JPG",
-                                        "/pery/fa06826f-aae7-4505-94ba-b24755bc17f5.JPG",
-                                        "/pery/a01b64c0-6bc7-4823-aa30-5ca802a5770f.JPG",
-                                        "/pery/488b4480-092a-4317-b3e5-b8e58268b951.JPG",
-                                        "/pery/8d1dd94f-375a-4755-98c3-8ffea44447f4.JPG",
-                                        "/pery/c4e6a02b-907d-4d2e-af03-d33025c0b805.JPG",
-                                        "/pery/new1.JPG",
-                                        "/pery/new2.JPG",
-                                        "/pery/94af66ed-792a-4773-8474-275978715eba.JPG",
-                                        "/pery/d74aa6fc-b43b-4d2e-8c50-4b184c6b25ad.JPG",
-                                        "/pery/pernew.JPG",
-                                        "/Laser/a71e61dc-42b3-4b2e-a9fd-23644b665060.JPG",
+                                        "/sluzby/permanentny-makeup/pery/758e49a4-60f9-4b31-a5be-6dcb08c63042.JPG",
+                                        "/sluzby/permanentny-makeup/pery/fa06826f-aae7-4505-94ba-b24755bc17f5.JPG",
+                                        "/sluzby/permanentny-makeup/pery/a01b64c0-6bc7-4823-aa30-5ca802a5770f.JPG",
+                                        "/sluzby/permanentny-makeup/pery/488b4480-092a-4317-b3e5-b8e58268b951.JPG",
+                                        "/sluzby/permanentny-makeup/pery/8d1dd94f-375a-4755-98c3-8ffea44447f4.JPG",
+                                        "/sluzby/permanentny-makeup/pery/c4e6a02b-907d-4d2e-af03-d33025c0b805.JPG",
+                                        "/sluzby/permanentny-makeup/pery/new1.JPG",
+                                        "/sluzby/permanentny-makeup/pery/new2.JPG",
+                                        "/sluzby/permanentny-makeup/pery/94af66ed-792a-4773-8474-275978715eba.JPG",
+                                        "/sluzby/permanentny-makeup/pery/d74aa6fc-b43b-4d2e-8c50-4b184c6b25ad.JPG",
+                                        "/sluzby/permanentny-makeup/pery/pernew.JPG",
+                                        "/sluzby/permanentny-makeup/pery/a71e61dc-42b3-4b2e-a9fd-23644b665060.JPG",
                                     ].map((src, idx, arr) => (
                                         <div
                                             key={idx}

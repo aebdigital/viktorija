@@ -14,7 +14,7 @@ export default function RemovalPage() {
             <div className="grid grid-cols-3 gap-3 w-full">
                 <div className="relative h-[200px] md:h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                     <Image
-                        src="/laser_herosection/PHOTO-2026-02-24-14-05-15.jpg"
+                        src="/sluzby/odstranovanie-pmu/1.jpg"
                         alt="Laserové odstraňovanie 1"
                         fill
                         className="object-cover"
@@ -22,7 +22,7 @@ export default function RemovalPage() {
                 </div>
                 <div className="relative h-[200px] md:h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                     <video
-                        src="/laser_herosection/VIDEO-2026-02-24-14-07-23.mp4"
+                        src="https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/odstranovanie.mp4"
                         autoPlay
                         muted
                         loop
@@ -32,7 +32,7 @@ export default function RemovalPage() {
                 </div>
                 <div className="relative h-[200px] md:h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                     <Image
-                        src="/laser_herosection/PHOTO-2026-02-24-14-43-33.jpg"
+                        src="/sluzby/odstranovanie-pmu/2.jpg"
                         alt="Laserové odstraňovanie 3"
                         fill
                         className="object-cover object-left"
@@ -61,12 +61,12 @@ export default function RemovalPage() {
                         </p>
                         <div className="grid grid-cols-3 gap-4 pt-4">
                             {[
-                                "/Laser/7296a7d2-15bf-4a5f-a409-732a9e4314f6.JPG",
-                                "/Laser/a40fcf98-97c3-42f3-b1fb-58cbb5e775eb.JPG",
-                                "/Laser/ac7f9777-4907-4556-9d4a-c382f46ebac7.JPG",
-                                "/Laser/60280169-c35b-4f01-9962-d5e48a2ec8fd.JPG",
-                                "/Laser/4aa1fd1b-d042-4e28-8c45-6068175daff2.JPG",
-                                "/Laser/e55cf5f5-d505-4f93-8108-cdfdf0efe103.JPG",
+                                "/sluzby/odstranovanie-pmu/3.jpg",
+                                "/sluzby/odstranovanie-pmu/4.jpg",
+                                "/sluzby/odstranovanie-pmu/5.jpg",
+                                "/sluzby/odstranovanie-pmu/6.jpg",
+                                "/sluzby/odstranovanie-pmu/7.jpg",
+                                "/sluzby/odstranovanie-pmu/8.jpg",
                             ].map((src, idx) => (
                                 <div
                                     key={idx}
@@ -116,10 +116,10 @@ export default function RemovalPage() {
                         </p>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
                             {[
-                                "/Laser/9c80a15b-c3b4-43eb-b732-071d60562b92.JPG",
-                                "/Laser/7c8d109d-168e-4e91-9b5f-315b46ee3f10.JPG",
-                                "/Laser/87e7f275-b02c-4f2e-a54a-f5ccccc683b9.JPG",
-                                "/Laser/060d4eb6-2fd9-4806-9aca-21e41fc9a7fa.JPG",
+                                "/sluzby/odstranovanie-pmu/9.jpg",
+                                "/sluzby/odstranovanie-pmu/10.jpg",
+                                "/sluzby/odstranovanie-pmu/11.jpg",
+                                "/sluzby/odstranovanie-pmu/12.jpg",
                             ].map((src, idx) => (
                                 <div
                                     key={idx}
@@ -137,10 +137,10 @@ export default function RemovalPage() {
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
                             {[
-                                "/Laser/ee519d01-3684-47cc-ae1f-5f716dd4097b.JPG",
-                                "/Laser/a19992a0-5eb7-4f6b-8a05-e6bf5207a45a.JPG",
-                                "/Laser/2b400a74-7fcd-4f32-8107-7c27660e2a52.JPG",
-                                "/Laser/563dbb03-60d1-440b-8cf0-599f51f41587.JPG",
+                                "/sluzby/odstranovanie-pmu/13.jpg",
+                                "/sluzby/odstranovanie-pmu/14.jpg",
+                                "/sluzby/odstranovanie-pmu/15.jpg",
+                                "/sluzby/odstranovanie-pmu/16.jpg",
                             ].map((src, idx) => (
                                 <div
                                     key={idx}
@@ -194,8 +194,8 @@ export default function RemovalPage() {
                         </p>
                         <div className="grid grid-cols-3 gap-4 pt-4">
                             {[
-                                "/Laser/c343f7b3-3259-468d-bb01-3e47d7e0103d.JPG",
-                                "/PHOTO-2026-02-25-10-53-49.jpg",
+                                "/sluzby/odstranovanie-pmu/17.jpg",
+                                "/sluzby/odstranovanie-pmu/18.jpg",
                             ].map((src, idx) => (
                                 <div
                                     key={idx}
@@ -255,14 +255,14 @@ export default function RemovalPage() {
                         <h4 className="font-marcellus text-2xl text-[#1D0E22] uppercase tracking-wider">Výsledky odstraňovania</h4>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                             {[
-                                "/Laser/27eb3d7a-e5ab-41d1-93d0-16fdb9774806.JPG",
-                                "/Laser/d1fdd875-4c35-45b7-b3d9-489b09b2ead7.JPG",
-                                "/Laser/3694fd5c-ca05-481e-b70d-dcde94eec19c.JPG",
-                                "/Laser/ee8bbc99-87ea-4053-81e0-7a7fcba13520.JPG",
-                                "/Laser/bc17dd0f-8eb5-4fb1-bcad-d893d20a1752.JPG",
-                                "/Laser/eec944bd-49ad-4bed-b74e-13b0597377a1.JPG",
-                                "/Laser/ee9ff70a-f272-4b87-91ce-9f050c642aeb.JPG",
-                                "/Laser/3f776991-5fc5-4580-8ccc-6e2053feb256.JPG",
+                                "/sluzby/odstranovanie-pmu/19.jpg",
+                                "/sluzby/odstranovanie-pmu/20.jpg",
+                                "/sluzby/odstranovanie-pmu/21.jpg",
+                                "/sluzby/odstranovanie-pmu/22.jpg",
+                                "/sluzby/odstranovanie-pmu/23.jpg",
+                                "/sluzby/odstranovanie-pmu/24.jpg",
+                                "/sluzby/odstranovanie-pmu/25.jpg",
+                                "/sluzby/odstranovanie-pmu/26.jpg",
                             ].map((src, idx) => (
                                 <div
                                     key={idx}
@@ -284,12 +284,12 @@ export default function RemovalPage() {
                     <div>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                             {[
-                                "/Laser/db3f753e-7c4e-4379-a980-3d0b53df2c63.JPG",
-                                "/Laser/b4b68f48-5048-4844-92ef-9a6abfafb123.JPG",
-                                "/Laser/7c1d9bd9-6f56-4dc5-8416-567b35ee6a58.JPG",
-                                "/Laser/9387406b-47cc-4d96-afb4-22b85c44a612.JPG",
-                                "/Laser/9dfe8b65-18b8-45a3-8daa-84eb96f269cc.JPG",
-                                "/Laser/3a77d4c4-8c83-4034-b03a-c7206d03c70b.JPG",
+                                "/sluzby/odstranovanie-pmu/27.jpg",
+                                "/sluzby/odstranovanie-pmu/28.jpg",
+                                "/sluzby/odstranovanie-pmu/29.jpg",
+                                "/sluzby/odstranovanie-pmu/30.jpg",
+                                "/sluzby/odstranovanie-pmu/31.jpg",
+                                "/sluzby/odstranovanie-pmu/32.jpg",
                             ].map((src, idx) => (
                                 <div
                                     key={idx}

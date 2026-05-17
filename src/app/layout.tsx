@@ -29,11 +29,72 @@ const prociono = Prociono({
 });
 
 export const metadata: Metadata = {
-  title: "Salón Viktória | Kozmetický Salón",
-  description: "Profesionálny kozmetický salón, permanentný make-up a estetické služby.",
-  icons: {
-    icon: '/output-onlinepngtools-removebg-preview.png',
+  title: "Salón Viktória | Profesionálny Kozmetický Salón Bratislava",
+  description: "Exkluzívny kozmetický salón v Bratislave. Ponúkame permanentný make-up (PMU), estetické rituály tváre, nastreľovanie náušníc a odborné kurzy v našej akadémii.",
+  keywords: ["kozmetický salón Bratislava", "permanentný make-up Bratislava", "PMU Bratislava", "estetická kozmetika", "nastreľovanie náušníc", "kurzy permanentného make-upu", "Salón Viktória"],
+  authors: [{ name: "Viktorija Kendra" }],
+  openGraph: {
+    title: "Salón Viktória | Kozmetický Salón Bratislava",
+    description: "Profesionálny permanentný make-up a estetické služby v srdci Bratislavy.",
+    url: "https://salonviktoria.sk",
+    siteName: "Salón Viktória",
+    locale: "sk_SK",
+    type: "website",
+    images: [
+      {
+        url: "/shared/IMG_1422.JPG",
+        width: 1200,
+        height: 630,
+        alt: "Salón Viktória - Profesionálna kozmetika",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Salón Viktória | Kozmetický Salón Bratislava",
+    description: "Profesionálny permanentný make-up a estetické služby v srdci Bratislavy.",
+    images: ["/shared/IMG_1422.JPG"],
+  },
+  icons: {
+    icon: '/shared/output-onlinepngtools-removebg-preview.png',
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Salón Viktória",
+  "image": "https://salonviktoria.sk/shared/IMG_1422.JPG",
+  "@id": "https://salonviktoria.sk",
+  "url": "https://salonviktoria.sk",
+  "telephone": "+421907796562",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mlynské nivy",
+    "addressLocality": "Bratislava",
+    "postalCode": "821 09",
+    "addressCountry": "SK"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.1466,
+    "longitude": 17.1333
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://www.instagram.com/viktorija_kendra_pmu_academy/"
+  ]
 };
 
 export default function RootLayout({
@@ -43,6 +104,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sk">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${marcellus.variable} ${montserrat.variable} ${alexBrush.variable} ${prociono.variable} antialiased`}
         style={{ backgroundColor: "#9da0aa" }}

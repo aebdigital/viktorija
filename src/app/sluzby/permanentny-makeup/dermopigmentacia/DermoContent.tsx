@@ -25,7 +25,7 @@ export default function DermoContent() {
                 {/* Hero Image */}
                 <div className="relative h-[300px] md:h-[500px] w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                     <Image
-                        src="/dermopigmentacia.webp"
+                        src="/sluzby/permanentny-makeup/dermopigmentacia/dermopigmentacia.webp"
                         alt="Dermopigmentácia"
                         fill
                         className="object-cover"

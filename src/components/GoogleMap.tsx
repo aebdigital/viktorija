@@ -165,7 +165,7 @@ export default function GoogleMap({
                 pin.className = "google-map-pin";
                 pin.setAttribute("aria-label", "Zobraziť informácie o Salón Viktória");
                 pin.innerHTML =
-                    '<span class="google-map-pin__badge"></span><img class="google-map-pin__image" src="/output-onlinepngtools-removebg-preview.png" alt="" />';
+                    '<span class="google-map-pin__badge"></span><img class="google-map-pin__image" src="/shared/output-onlinepngtools-removebg-preview.png" alt="" />';
 
                 marker = new AdvancedMarkerElement({
                     map,
@@ -175,7 +175,7 @@ export default function GoogleMap({
                 });
 
                 marker.addListener("click", () => {
-                    infoWindow.setContent(makeInfoContent("Salón Viktória", "Mlynské Nivy 10, 821 09 Bratislava", "/twincity.jpg"));
+                    infoWindow.setContent(makeInfoContent("Salón Viktória", "Mlynské Nivy 10, 821 09 Bratislava", "/shared/twincity.jpg"));
                     infoWindow.open({ anchor: marker, map });
                 });
 
