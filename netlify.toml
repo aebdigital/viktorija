@@ -1,0 +1,5 @@
+[build.environment]
+# NEXT_PUBLIC_* env vars are intentionally exposed in the client bundle.
+# Google Maps API key is secured via HTTP referrer restrictions in Google Cloud Console.
+# Supabase anon key is the public client key, secured by Row-Level Security policies.
+SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,NEXT_PUBLIC_GOOGLE_MAP_ID,NEXT_PUBLIC_SUPABASE_ANON_KEY,NEXT_PUBLIC_SUPABASE_URL"
