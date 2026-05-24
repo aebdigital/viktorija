@@ -175,7 +175,7 @@ export default function GoogleMap({
                 });
 
                 marker.addListener("click", () => {
-                    infoWindow.setContent(makeInfoContent("Salón Viktória", "Mlynské Nivy 10, 821 09 Bratislava", "/shared/twincity.jpg"));
+                    infoWindow.setContent(makeInfoContent("Salón Viktória", "Mlynské Nivy 10, 821 09 Bratislava", "/shared/Gemini_Generated_Image_3tbp373tbp373tbp.png"));
                     infoWindow.open({ anchor: marker, map });
                 });
 

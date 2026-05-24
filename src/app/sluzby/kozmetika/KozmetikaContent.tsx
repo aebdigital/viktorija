@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+const HERO_VIDEO_LEFT = "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/kozmetika.mp4";
 const HERO_VIDEO = "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/ritualy.mp4";
 const HERO_IMAGE = "/sluzby/kozmetika/kozmetika.webp";
 
@@ -344,7 +345,7 @@ const PROCEDURES: Procedure[] = [
         badge: "40+",
         body: (
             <div className="space-y-4">
-                <p>Regeneračný rituál so silným „botox-like" účinkom. Bez injekcií, bez vedľajších účinkov.</p>
+                <p>Regeneračný rituál so silným „botox-like&quot; účinkom. Bez injekcií, bez vedľajších účinkov.</p>
                 <p>Výrazný protivráskový a omladzujúci efekt vďaka obsahu peptidu Argireline a ďalších aktívnych látok prírodného pôvodu. Argireline predstavuje šetrnú alternatívu k botulotoxínovým injekciám – pomáha uvoľňovať mikrokontrakcie podkožného svalstva.</p>
                 <p>Vyhladzuje kožný mikroreliéf, vrásky, jazvy a jazvičky po akné. Spomaľuje vznik nových vrások a zmierňuje už existujúce.</p>
                 <div>
@@ -455,12 +456,17 @@ export default function KozmetikaContent() {
             <div className="font-montserrat font-light text-[#1D0E22] leading-tight text-lg">
                 {/* Floated media block – desktop */}
                 <div className="hidden md:flex float-right ml-4 mb-4 gap-3 w-2/3">
-                    <div className="relative flex-1 h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-                        <Image
-                            src={HERO_IMAGE}
-                            alt="Rituály tváre"
-                            fill
-                            className="object-cover"
+                    <div
+                        className="relative flex-1 h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-2xl cursor-pointer"
+                        onClick={() => openVideoLightbox(HERO_VIDEO_LEFT)}
+                    >
+                        <video
+                            src={HERO_VIDEO_LEFT}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            className="w-full h-full object-cover"
                         />
                     </div>
                     <div
@@ -480,12 +486,17 @@ export default function KozmetikaContent() {
 
                 {/* Mobile-only media (stacked) */}
                 <div className="flex md:hidden gap-3 mb-6">
-                    <div className="relative flex-1 h-[200px] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-                        <Image
-                            src={HERO_IMAGE}
-                            alt="Rituály tváre"
-                            fill
-                            className="object-cover"
+                    <div
+                        className="relative flex-1 h-[200px] rounded-xl overflow-hidden border border-white/10 shadow-2xl cursor-pointer"
+                        onClick={() => openVideoLightbox(HERO_VIDEO_LEFT)}
+                    >
+                        <video
+                            src={HERO_VIDEO_LEFT}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            className="w-full h-full object-cover"
                         />
                     </div>
                     <div
@@ -503,7 +514,7 @@ export default function KozmetikaContent() {
                     </div>
                 </div>
 
-                <h3 className="font-marcellus text-4xl text-[#1D0E22] mb-6 uppercase">Rituály tváre</h3>
+                <h3 className="font-marcellus text-4xl text-[#1D0E22] mb-6 uppercase">Beauty therapy</h3>
                 <h4 className="font-marcellus text-2xl text-[#1D0E22] mb-4 uppercase tracking-wider">Protokol ošetrenia</h4>
                 <p className="mb-4">
                     Každé ošetrenie je individuálny rituál prispôsobený aktuálnemu stavu pleti.

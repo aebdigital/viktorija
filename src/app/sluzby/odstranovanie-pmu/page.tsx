@@ -6,6 +6,7 @@ import StickyCennikButton from "../_components/StickyCennikButton";
 export const metadata: Metadata = {
     title: "Odstraňovanie PMU | Salón Viktória",
     description: "Bezpečné odstraňovanie starého alebo nepodareného permanentného make-upu pomocou laserov a removerov.",
+    alternates: { canonical: "/sluzby/odstranovanie-pmu" },
 };
 
 export default function RemovalPage() {
@@ -192,7 +193,7 @@ export default function RemovalPage() {
                         <p>
                             Práca s farebnou korekciou pigmentu vyžaduje detailnú znalosť optiky svetla, správania sa jednotlivých farebných zložiek a skúsenosť s nastavením energie tak, aby sme dosiahli kontrolovanú a esteticky nositeľnú zmenu.
                         </p>
-                        <div className="grid grid-cols-3 gap-4 pt-4">
+                        <div className="grid grid-cols-2 gap-4 pt-4">
                             {[
                                 "/sluzby/odstranovanie-pmu/17.jpg",
                                 "/sluzby/odstranovanie-pmu/18.jpg",

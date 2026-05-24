@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+    title: "Blog | Salón Viktória",
+    description: "Odborné články z oblasti permanentného make-upu, hojenia, pigmentov a estetickej kozmetiky od Viktoriji Kendry.",
+    alternates: { canonical: "/blog" },
+};
 
 const BLOG_POSTS = [
     {

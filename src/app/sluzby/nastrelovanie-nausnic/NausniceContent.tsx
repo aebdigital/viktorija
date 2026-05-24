@@ -55,6 +55,8 @@ export default function NausniceContent() {
     });
 
     const [videoLightbox, setVideoLightbox] = useState<{ isOpen: boolean; src: string }>({ isOpen: false, src: "" });
+    const [isInfoPopupOpen, setIsInfoPopupOpen] = useState(false);
+    const [isEnvelopeHovered, setIsEnvelopeHovered] = useState(false);
     const videoLightboxRef = useRef<HTMLVideoElement>(null);
 
     const openVideoLightbox = (src: string) => {
@@ -71,22 +73,25 @@ export default function NausniceContent() {
         setVideoLightbox({ isOpen: false, src: "" });
     };
 
-    const handleVideoLightboxKey = useCallback((e: KeyboardEvent) => {
-        if (e.key === "Escape") closeVideoLightbox();
+    const handleKeyDown = useCallback((e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+            closeVideoLightbox();
+            setIsInfoPopupOpen(false);
+        }
     }, []);
 
     useEffect(() => {
-        if (videoLightbox.isOpen) {
+        if (videoLightbox.isOpen || isInfoPopupOpen) {
             document.body.style.overflow = "hidden";
-            window.addEventListener("keydown", handleVideoLightboxKey);
+            window.addEventListener("keydown", handleKeyDown);
         } else {
             document.body.style.overflow = "unset";
         }
         return () => {
             document.body.style.overflow = "unset";
-            window.removeEventListener("keydown", handleVideoLightboxKey);
+            window.removeEventListener("keydown", handleKeyDown);
         };
-    }, [videoLightbox.isOpen, handleVideoLightboxKey]);
+    }, [videoLightbox.isOpen, isInfoPopupOpen, handleKeyDown]);
 
     const openLightbox = (images: string[], index: number) => {
         setLightbox({ isOpen: true, images, index });
@@ -123,56 +128,150 @@ export default function NausniceContent() {
                 ))}
             </div>
 
-            <div className="font-montserrat font-light text-[#1D0E22] leading-snug text-lg">
-                <div className="space-y-8">
+            <div className="font-montserrat font-light text-[#1D0E22] leading-tight text-lg [&_p]:my-0 [&_ul]:my-0">
+                <div className="space-y-6">
 
-                    {/* ═══ Estetické sebavedomie ═══ */}
-                    <div className="space-y-2">
+                    {/* ═══ Úvod ═══ */}
+                    <div className="space-y-1">
                         <h3 className="font-marcellus text-3xl text-[#1D0E22] uppercase">Nastreľovanie náušníc</h3>
-                        <p className="text-xl italic text-[#1D0E22]/80">
-                            Estetické sebavedomie je formou sebavyjadrenia.
+                        <p>
+                            Náušnice sú často prvým jemným detailom, ktorým žena alebo dieťa vyjadruje svoju osobnosť, štýl a estetické cítenie.
                         </p>
                         <p>
-                            Ucho sa stalo novou plochou pre šperkársky dizajn. Žena si skladá šperky ako kompozíciu. Viacero jemných dierok pôsobí sofistikovanejšie než jeden dominantný šperk – menej objemu, viac detailu.
+                            Aj preto vnímam nastreľovanie náušníc nie len ako technický úkon, ale ako malý estetický rituál, pri ktorom je dôležitá presnosť, pokoj a citlivý prístup.
                         </p>
                         <p>
-                            Zdobenie viacerými dierkami je moderné, pretože spája architektúru, identitu a flexibilitu. Ucho má líniu, body a proporcie. Žena si vytvára vlastný podpis. Môže kombinovať, meniť, vrstviť.
+                            Pri nastreľovaní používam profesionálny systém značky <strong>STUDEX</strong>. K dispozícii mám dva typy aplikačných pištolí:
                         </p>
+                        <ul className="space-y-1 pl-1">
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>veľmi tichý systém, ktorý odporúčam najmä pre malé dievčatká a citlivejšie klientky,</span></li>
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>dynamickejší systém s rýchlou aplikáciou.</span></li>
+                        </ul>
                         <p>
-                            Asymetria pôsobí moderne, detail ucha je fotogenický. Pri nastreľovaní vždy volím taký uhol, aby náušnice smerovali tam, kam smeruje pohľad – aby kompozícia ladila s tvárou ako celkom.
+                            Používané náušnice sú vyrobené z chirurgickej ocele implantátovej kvality <strong>316LVM</strong>, ktorá sa vyznačuje vysokou čistotou materiálu a veľmi dobrou znášanlivosťou pokožkou.
                         </p>
                     </div>
 
-                    {/* ═══ Od bábätiek po slečny ═══ */}
-                    <div className="space-y-2">
-                        <h4 className="font-marcellus text-2xl text-[#1D0E22] uppercase tracking-wider">Nastreľovanie náušníc – od bábätiek po slečny</h4>
-                        <p className="text-sm italic text-[#1D0E22]/60">Píšem z viac ako 20-ročného pozorovania vo svojej praxi.</p>
+                    {/* ═══ Priebeh procedúry ═══ */}
+                    <div className="space-y-1">
+                        <div className="flex justify-center w-full py-4 overflow-visible">
+                            <button
+                                onClick={() => setIsInfoPopupOpen(true)}
+                                onMouseEnter={() => setIsEnvelopeHovered(true)}
+                                onMouseLeave={() => setIsEnvelopeHovered(false)}
+                                className="group relative w-44 h-24 sm:w-48 sm:h-28 bg-[#EEE3CE] rounded-lg border border-[#1D0E22]/15 flex items-center justify-center cursor-pointer focus:outline-none shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-visible select-none"
+                            >
+                                <svg 
+                                    className="absolute inset-0 w-full h-full pointer-events-none overflow-visible" 
+                                    fill="none" 
+                                    viewBox="0 0 100 60" 
+                                    preserveAspectRatio="none"
+                                >
+                                    {/* Top Flap (Animated) */}
+                                    <motion.path 
+                                        animate={{
+                                            d: isEnvelopeHovered ? "M 0 0 L 50 -20 L 100 0" : "M 0 0 L 50 32 L 100 0"
+                                        }}
+                                        transition={{ duration: 0.35, ease: "easeInOut" }}
+                                        stroke="#1D0E22" 
+                                        strokeWidth="1" 
+                                        strokeOpacity="0.3"
+                                        fill="#EEE3CE"
+                                        fillOpacity="0.75"
+                                    />
+                                </svg>
+                                
+                                <motion.div 
+                                    className="relative z-10 flex flex-col items-center gap-1 text-center px-4"
+                                    animate={{
+                                        y: isEnvelopeHovered ? -8 : 4
+                                    }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                >
+                                    <span className="font-marcellus text-xs sm:text-sm uppercase tracking-widest text-[#1D0E22] font-semibold">
+                                        List pre rodičov
+                                    </span>
+                                    {/* Mini letter arrow indicator */}
+                                    <motion.span 
+                                        className="text-[9px] text-[#1D0E22]/60 uppercase tracking-widest flex items-center gap-1 font-montserrat font-medium"
+                                        animate={{ opacity: isEnvelopeHovered ? 1 : 0 }}
+                                        transition={{ duration: 0.25 }}
+                                    >
+                                        Otvoriť →
+                                    </motion.span>
+                                </motion.div>
+                            </button>
+                        </div>
+                        <h4 className="font-marcellus text-2xl text-[#1D0E22] uppercase tracking-wider pb-1 border-b border-[#1D0E22]/10 mb-1 pt-4">
+                            Priebeh procedúry
+                        </h4>
                         <p>
-                            Pri nastreľovaní náušníc bábätkám je veľmi dôležitá pohoda mamy. Je to malý rituál – prijatie ženskosti. Ak sa mama teší na svoju dcérku s náušnicami, dieťa cíti pokoj.
+                            Každému klientovi venujem individuálnu pozornosť a dostatok času, aby celý proces prebehol pokojne, komfortne a s dôrazom na estetický výsledok.
+                        </p>
+                        <p>Procedúra zahŕňa:</p>
+                        <ul className="space-y-1 pl-1">
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>konzultáciu a výber náušníc,</span></li>
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>analýzu tvaru a anatómie uška,</span></li>
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>dezinfekciu,</span></li>
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>presné zakreslenie miesta vpichu,</span></li>
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>odsúhlasenie umiestnenia klientkou alebo rodičom,</span></li>
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>samotné prepichnutie uší,</span></li>
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>záverečnú dezinfekciu a odporúčania k starostlivosti.</span></li>
+                        </ul>
+                        <p>
+                            Dôležitou súčasťou mojej práce je aj estetika umiestnenia náušníc — aby pôsobili harmonicky, symetricky a prirodzene vzhľadom na tvar ucha a tvár.
                         </p>
                         <p>
-                            U dospievajúcich dievčat je to iný moment. Je to rituál prechodu – z dievčaťa na slečnu.
+                            Na jednu procedúru si vyhradzujem približne 30 minút, aby celý proces prebehol bez stresu, s dôrazom na hygienu, komfort a precízny výsledok.
+                        </p>
+                    </div>
+
+                    {/* ═══ Domáca starostlivosť ═══ */}
+                    <div className="space-y-1">
+                        <h4 className="font-marcellus text-2xl text-[#1D0E22] uppercase tracking-wider">Domáca starostlivosť</h4>
+                        <p>
+                            Správna starostlivosť po nastrelení náušníc je dôležitou súčasťou hojenia a ovplyvňuje komfort aj výsledný stav prepichnutého miesta.
+                        </p>
+
+                        <h5 className="font-marcellus text-lg text-[#1D0E22] uppercase tracking-wider pt-2">Odporúčania po procedúre</h5>
+                        <ul className="space-y-1 pl-1">
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>V deň procedúry neodporúčam umývanie vlasov.</span></li>
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span>
+                                <div>
+                                    <span>Náušnice počas hojenia nevyťahujte:</span>
+                                    <ul className="space-y-1 pl-4 pt-1">
+                                        <li className="flex gap-1.5"><span className="text-gold/60 text-lg leading-none">—</span><span>klasické prepichnutie minimálne 6 týždňov,</span></li>
+                                        <li className="flex gap-1.5"><span className="text-gold/60 text-lg leading-none">—</span><span>pri helixe a chrupavke minimálne 9 týždňov, často aj dlhšie podľa hojenia.</span></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>
+                            Počas celej doby hojenia odporúčam miesto ráno a večer dezinfikovať z prednej aj zadnej strany. Vhodný je napríklad <strong>60 % lieh</strong>, <strong>Dettol</strong> alebo <strong>Softa-Man/Softasept</strong>.
                         </p>
                         <p>
-                            Samotné nastreľovanie je krátky a spravidla príjemný proces. Pri analýze a dezinfekcii uška robím jemnú masáž. Nájdeme esteticky pekné miesto a označím ho bodkou. Značky musia byť symetrické. Mama alebo slečna majú vždy priestor miesto schváliť alebo pripomienkovať – musí sa páčiť nám všetkým.
+                            Počas prvých dvoch týždňov môžete dezinfekciu aplikovať aj 3–4× denne, aby sa čerstvé miesto hojilo pokojne a čisto.
+                        </p>
+
+                        <h5 className="font-marcellus text-lg text-[#1D0E22] uppercase tracking-wider pt-2">Čomu sa počas hojenia vyhnúť</h5>
+                        <ul className="space-y-1 pl-1">
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>bazén odporúčam vynechať približne 5 dní,</span></li>
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>kúpanie v jazerách a prírodných vodách približne 1 mesiac.</span></li>
+                        </ul>
+
+                        <h5 className="font-marcellus text-lg text-[#1D0E22] uppercase tracking-wider pt-2">Výmena náušníc</h5>
+                        <p>
+                            Po uplynutí odporúčanej doby je možné náušnice jemným, ale pevným potiahnutím otvoriť a vybrať. Pred výmenou odporúčam:
+                        </p>
+                        <ul className="space-y-1 pl-1">
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>vydezinfikovať uško,</span></li>
+                            <li className="flex gap-1.5"><span className="text-gold text-lg leading-none">✦</span><span>očistiť a vydezinfikovať náušnice.</span></li>
+                        </ul>
+                        <p>
+                            Ak je miesto zahojené, bez bolesti a citlivosti, môžete začať nosiť iné náušnice. Ak je uško ešte citlivé alebo potrebuje viac času na hojenie, odporúčam dočasne ponechať pôvodné nastreľovacie náušnice.
                         </p>
                         <p>
-                            Následne náušnice nastrelím.
-                        </p>
-                        <p>
-                            Klienti si môžu vybrať z dvoch typov pištolí. Jedna je rýchlejšia a je počuť jemné &ldquo;kliknutie&rdquo;. Druhá je tichá – bábätko pocíti len drobný vpich a často ani nestihne zareagovať.
-                        </p>
-                        <p>
-                            U adolescentiek býva reakcia podobná: prídu bledé a vystrašené, no po nastrelení sa pozrú do zrkadla a povedia: &ldquo;To až tak nebolelo.&rdquo; Odchádzajú usmiate a spokojné.
-                        </p>
-                        <p>
-                            Čo sa týka akupunktúrnych bodov, v estetických miestach sa spravidla nenachádzajú. Niekoľkokrát sa stalo, že maminky dali uško označiť akupunkturistovi – a značky boli presne v miestach, ktoré sú vizuálne harmonické.
-                        </p>
-                        <p>
-                            Náušnice sú vyrobené z chirurgickej ocele najvyššej kvality. Sú sterilné a hermeticky balené. Majú precízne tvarovaný hrot, ktorý uško šetrne prepichne.
-                        </p>
-                        <p>
-                            K dispozícii je viacero modelov, z ktorých si môžete vybrať podľa vlastného štýlu.
+                            Používaný materiál je bezpečný a vhodný aj na dlhodobé nosenie.
                         </p>
                     </div>
 
@@ -300,7 +399,7 @@ export default function NausniceContent() {
                                 <h4 className="font-marcellus text-lg uppercase tracking-wider border-b border-gold/10 pb-1">Hygiena a starostlivosť</h4>
                                 <div className="flex justify-between items-center gap-4">
                                     <p className="font-medium text-sm">Dezinfekcia (6 g)</p>
-                                    <span className="font-bold whitespace-nowrap">3,50 €</span>
+                                    <span className="font-bold whitespace-nowrap">4 €</span>
                                 </div>
                             </div>
                         </div>
@@ -361,6 +460,80 @@ export default function NausniceContent() {
                                 />
                             </motion.div>
                         </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Info Popup for Parents */}
+            <AnimatePresence>
+                {isInfoPopupOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setIsInfoPopupOpen(false)}
+                        className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4 md:p-6 backdrop-blur-sm"
+                    >
+                        <motion.div
+                            initial={{ scale: 0.95, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.95, opacity: 0 }}
+                            transition={{ type: "spring", duration: 0.4 }}
+                            onClick={(e) => e.stopPropagation()}
+                            className="bg-[#EEE3CE] border border-white/20 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative p-8 md:p-10 text-[#1D0E22] flex flex-col gap-6"
+                        >
+                            {/* Close Button */}
+                            <button
+                                onClick={() => setIsInfoPopupOpen(false)}
+                                className="absolute top-4 right-4 md:top-6 md:right-6 text-[#1D0E22]/60 hover:text-[#1D0E22] transition-colors p-1 cursor-pointer"
+                                aria-label="Zatvoriť"
+                            >
+                                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+
+                            {/* Popup Content */}
+                            <div className="space-y-4 font-montserrat font-light text-base leading-relaxed md:text-lg">
+                                <p className="font-semibold text-lg md:text-xl">Milé maminky, tatinkovia a babičky,</p>
+                                
+                                <p>
+                                    nastreľovanie náušníc nie je bolestivá procedúra.
+                                    <br />
+                                    Áno, samotný moment vpichu môže byť na sekundu mierne nepríjemný, no trvá naozaj len veľmi krátko.
+                                </p>
+                                
+                                <p>
+                                    Pracujem s tichým systémom nastreľovania, ktorý je pre deti jemnejší a komfortnejší. Moderné technológie dnes posunuli nastreľovanie náušníc na úplne inú úroveň než kedysi.
+                                </p>
+                                
+                                <p>
+                                    Celý proces vnímam ako radostný a skrášľujúci moment — malý slávnostný krok k vlastnému štýlu a sebavyjadreniu dieťaťa.
+                                </p>
+                                
+                                <p>
+                                    Deti veľmi citlivo vnímajú emócie rodičov. Keď prichádzajú rodiny pokojné, usmiate a v príjemnom očakávaní, celý proces prebieha ľahšie, krajšie a s lepším zážitkom pre všetkých.
+                                </p>
+                                
+                                <p>
+                                    Náušnice nastreľujem viac ako 25 rokov a viem, že deti často zvládnu procedúru oveľa lepšie, než si dospelí predstavujú.
+                                </p>
+                                
+                                <p className="font-medium">
+                                    Dôverujte svojim deťom, že to zvládnu.
+                                    <br />
+                                    A dôverujte aj mne — celým procesom vás prevediem čo najjemnejšie, pokojne a empaticky.
+                                </p>
+                            </div>
+
+                            {/* Signature */}
+                            <div className="border-t border-[#1D0E22]/15 pt-6 flex flex-col items-end shrink-0">
+                                <span className="font-montserrat text-xs uppercase tracking-widest text-[#1D0E22]/60">S úctou,</span>
+                                <span className="!font-alex text-4xl md:text-5xl text-[#1D0E22] mt-2 block tracking-wide">
+                                    Viktorija Kendra
+                                </span>
+                            </div>
+                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>

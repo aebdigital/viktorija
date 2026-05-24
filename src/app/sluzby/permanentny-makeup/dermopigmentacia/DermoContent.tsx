@@ -47,7 +47,7 @@ export default function DermoContent() {
                         <div id="pmu-dermo-prices" className="pt-16 border-t-2 border-gold/20 mt-16">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                                 <div className="space-y-10 bg-white/30 p-8 rounded-2xl text-center">
-                                    <h3 className="font-marcellus text-3xl text-[#1D0E22] uppercase tracking-widest">Cenník – Dermopigmentácia</h3>
+                                    <h3 className="font-marcellus text-xl md:text-3xl text-[#1D0E22] uppercase tracking-wide md:tracking-widest">Cenník – Dermopigmentácia</h3>
                                     <p className="font-montserrat italic opacity-60">Cenník sa pripravuje...</p>
                                 </div>
                                 <ContactForm />

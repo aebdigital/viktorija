@@ -75,14 +75,24 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* RIGHT SIDE - Map */}
-                <div className="w-full h-full min-h-[400px] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-                    <GoogleMap
-                        title="Salón Viktória - mapa vo footeri"
-                        extraMarkers={[
-                            { lat: 48.146789638941314, lng: 17.12874363688941, label: "NIVY", imageSrc: "/shared/NIVY.webp", name: "NIVY centrum", address: "Mlynské Nivy 16, 821 09 Bratislava" },
-                        ]}
-                    />
+                {/* RIGHT SIDE - Maps */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full h-full min-h-[400px]">
+                    <div className="relative w-full h-full min-h-[300px] sm:min-h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                        <Image
+                            src="/shared/mapa.jpeg"
+                            alt="Mapa prístupu"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                    <div className="w-full h-full min-h-[300px] sm:min-h-full rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                        <GoogleMap
+                            title="Salón Viktória - mapa vo footeri"
+                            extraMarkers={[
+                                { lat: 48.146789638941314, lng: 17.12874363688941, label: "NIVY", imageSrc: "/shared/NIVY.webp", name: "NIVY centrum", address: "Mlynské Nivy 16, 821 09 Bratislava" },
+                            ]}
+                        />
+                    </div>
                 </div>
             </div>
         </footer>

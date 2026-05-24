@@ -65,6 +65,15 @@ export default function CourseApplicationModal({ isOpen, onClose, courseName: in
         setErrorMsg("");
 
         try {
+            const extraData = {
+                instagram: instagram || null,
+                facebook: facebook || null,
+                experience_level: experienceLevel,
+                practice_scope: practiceScope || null,
+                works_in_beauty: worksInBeauty,
+                beauty_field: beautyField || null,
+            };
+
             const { error } = await supabase
                 .from("viktorija_course_applications")
                 .insert({
@@ -72,12 +81,7 @@ export default function CourseApplicationModal({ isOpen, onClose, courseName: in
                     client_name: name,
                     client_email: email,
                     client_phone: phone,
-                    instagram: instagram || null,
-                    facebook: facebook || null,
-                    experience_level: experienceLevel,
-                    practice_scope: practiceScope || null,
-                    works_in_beauty: worksInBeauty,
-                    beauty_field: beautyField || null,
+                    message: JSON.stringify(extraData),
                     selected_term: selectedCourse.term,
                 });
 

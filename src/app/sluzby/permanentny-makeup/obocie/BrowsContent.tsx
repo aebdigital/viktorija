@@ -286,9 +286,9 @@ export default function BrowsContent() {
                                     {[
                                         { file: 11, ext: 'JPG', label: "Pôvodné obočie pred procedúrou." },
                                         { file: 22, ext: 'JPG', label: "Obočie ihneď po aplikácii minerálnych pigmentov.", position: "center 30%" },
-                                        { file: 55, ext: 'JPG', label: "Obočie ihneď po aplikácii minerálnych pigmentov." },
+                                        { file: 55, ext: 'jpg', label: "Obočie ihneď po aplikácii minerálnych pigmentov." },
                                         { file: 33, ext: 'JPG', label: "Zahojený výsledok – mäkký, prirodzený efekt." },
-                                        { file: 44, ext: 'jpg', label: "Obočie po zahojení." },
+                                        { file: 44, ext: 'JPG', label: "Obočie po zahojení." },
                                     ].map((item, idx, arr) => {
                                         const aImages = arr.map(a => `/permanent-obocie/a${a.file}.${a.ext}`);
                                         return (

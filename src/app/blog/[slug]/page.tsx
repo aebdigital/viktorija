@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -225,6 +226,24 @@ const BLOG_POSTS = [
         date: "12. februára 2026"
     },
 ];
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const post = BLOG_POSTS.find(p => p.slug === slug);
+    if (!post) return { title: "Článok nenájdený | Blog | Salón Viktória" };
+    return {
+        title: `${post.title} | Blog | Salón Viktória`,
+        description: post.excerpt,
+        alternates: { canonical: `/blog/${post.slug}` },
+        openGraph: {
+            title: post.title,
+            description: post.excerpt,
+            type: "article",
+            url: `/blog/${post.slug}`,
+            images: [{ url: post.image, alt: post.title }],
+        },
+    };
+}
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;

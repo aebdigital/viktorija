@@ -3,7 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const BLOG_POSTS = [
+type BlogPost = {
+    id: number;
+    title: string;
+    excerpt: string;
+    image: string;
+    imagePosition?: string;
+    slug: string;
+};
+
+const BLOG_POSTS: BlogPost[] = [
     {
         id: 1,
         title: "Čo sa deje s pokožkou v procese permanentného make-upu",
@@ -23,6 +32,7 @@ const BLOG_POSTS = [
         title: "Laser a remover",
         excerpt: "Odstraňovanie nežiadúceho permanentného make-upu je odborný proces, ktorý rešpektuje biologické zákonitosti kože.",
         image: "/homepage/def471a9-c59d-4981-9d9a-4e453c6a9e82.JPG",
+        imagePosition: "50% 85%",
         slug: "laser-a-remover"
     },
 ];
@@ -60,6 +70,7 @@ export default function BlogSection() {
                                         alt={post.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                        style={{ objectPosition: post.imagePosition ?? "50% 50%" }}
                                     />
                                 </div>
                                 {/* Text content below */}

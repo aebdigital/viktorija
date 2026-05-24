@@ -22,12 +22,12 @@ const SERVICES = [
         image: "/homepage/e38dda3c-d932-43cb-8f1d-3b15663e716d.JPG",
     },
     {
-        title: "RITUÁLY TVÁRE",
-        image: "/homepage/kozmetika.webp",
+        title: "BEAUTY THERAPY",
+        image: "/sluzby/kozmetika.webp",
     },
     {
-        title: "KRÉMY a SÉRA",
-        image: "/homepage/kozmetika.webp",
+        title: "SKINCARE ROUTINE",
+        image: "/sluzby/kremy-sera/serum-sidebar.jpg",
     },
 ];
 

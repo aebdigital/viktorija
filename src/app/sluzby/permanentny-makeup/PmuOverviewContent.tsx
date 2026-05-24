@@ -69,7 +69,10 @@ export default function PmuOverviewContent() {
 
             {/* Text Content Area (Single Column now) */}
             <div className="font-montserrat font-light text-[#1D0E22] leading-snug text-base space-y-8 max-w-4xl">
-                <h3 className="font-marcellus text-3xl md:text-4xl text-[#1D0E22] uppercase tracking-wider">Permanentný Make-up</h3>
+                <h3 className="font-marcellus text-3xl md:text-4xl text-[#1D0E22] uppercase tracking-wider">
+                    <span className="block md:inline !font-alex normal-case tracking-normal text-5xl md:text-6xl align-middle md:mr-6 mb-2 md:mb-0">Premium</span>
+                    <span className="block md:inline">Permanentný</span> <span className="block md:inline">Make-up</span>
+                </h3>
                 <p className="text-lg font-normal italic text-[#1D0E22]/80">
                     Priebeh procedúry: hlavné sedenie, korekcia a kontrolná návšteva
                 </p>

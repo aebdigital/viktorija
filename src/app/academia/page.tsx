@@ -9,15 +9,27 @@ import HeroVideo from "./_components/HeroVideo";
 export const metadata: Metadata = {
     title: "Academia | Salón Viktória",
     description: "Certifikované kurzy permanentného make-upu. Profesionálne vzdelávanie pre začiatočníčky aj pokročilé.",
+    alternates: { canonical: "/academia" },
 };
 
-const COURSES = [
-    { label: "The Art of PMU", href: "/academia/kurz1", image: "/academia/vik1.jpg", sub: "Začiatočník · 3 techniky", position: "center 40%" },
-    { label: "Tri Techniky Obočia", href: "/academia/kurz4", image: "/academia/vik2.jpg", sub: "Začiatočník aj pokročilý" },
-    { label: "Hyperrealistické Obočie", href: "/academia/kurz5", image: "/academia/vik3.jpg", sub: "Master Class · Pokročilý" },
-    { label: "PMU Očných Liniek", href: "/academia/kurz3", image: "/academia/vik1.jpg", sub: "Master Class · Pokročilý" },
-    { label: "PMU Pier", href: "/academia/kurz2", image: "/academia/vik2.jpg", sub: "Master Class · Pokročilý" },
-    { label: "Deň Otvorených Dverí", href: "/academia/dod", image: "/academia/vik3.jpg", sub: "Príďte sa pozrieť", position: "center 20%" },
+type Course = {
+    label: string;
+    href: string;
+    image?: string;
+    video?: string;
+    sub: string;
+    position?: string;
+};
+
+const COURSES: Course[] = [
+    { label: "The Art of PMU", href: "/academia/the-art-of-pmu", image: "/academia/kurz1/preview.PNG", sub: "Kurz pre Začiatočníkov", position: "center 40%" },
+    { label: "Tri Techniky Obočia", href: "/academia/tri-techniky-obocia", image: "/academia/kurz4/preview.PNG", sub: "Kurz pre Začiatočníkov aj pokročilých" },
+    { label: "Estetické nastrelovanie náušníc", href: "/academia/esteticke-nastrelovanie-nausnic", video: "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/kurz7.mp4", sub: "Kurz" },
+    { label: "Laser Touch", href: "/academia/laser-touch", image: "/academia/kurz6/lasertouch_preview.PNG", sub: "Kurz" },
+    { label: "PMU Očných Liniek", href: "/academia/pmu-ocnych-liniek", image: "/academia/kurz3/linky_preview.PNG", sub: "Master Class pre Pokročilých" },
+    { label: "PMU Pier", href: "/academia/pmu-pier", image: "/academia/kurz2/pery_preview.PNG", sub: "Master Class pre Pokročilých" },
+    { label: "Hyperrealistické Obočie", href: "/academia/hyperrealisticke-obocie", image: "/academia/kurz5/preview.PNG", sub: "Master Class pre Pokročilých" },
+    { label: "Deň Otvorených Dverí", href: "/academia/dod", video: "https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/dod.mp4", sub: "Príďte sa pozrieť", position: "center 20%" },
 ];
 
 export default function AcademiaPage() {
@@ -29,65 +41,96 @@ export default function AcademiaPage() {
                 <div className="max-w-[1800px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 xl:gap-16">
                     {/* Left Side: 3 Cards Stacked */}
                     <div className="flex flex-col gap-8 w-full lg:w-[380px] xl:w-[500px]">
-                        {COURSES.slice(0, 3).map((course) => (
+                        {COURSES.slice(0, 4).map((course) => (
                             <Link
                                 key={course.href}
                                 href={course.href}
-                                className="group relative aspect-[16/7] overflow-hidden rounded-2xl border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] block"
+                                className="group relative aspect-[16/5] overflow-hidden rounded-2xl border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] block"
                             >
-                                <Image
-                                    src={course.image}
-                                    alt={course.label}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    style={course.position ? { objectPosition: course.position } : undefined}
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                                <div className="absolute bottom-0 left-0 right-0 p-4 space-y-0.5">
-                                    <p className="font-montserrat text-[9px] uppercase tracking-[0.2em] text-white/50">{course.sub}</p>
-                                    <h2 className="font-marcellus text-base uppercase tracking-widest text-white group-hover:text-gold transition-colors duration-300">
-                                        {course.label}
-                                    </h2>
-                                </div>
+                                {course.video ? (
+                                    <video
+                                        src={course.video}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        style={course.position ? { objectPosition: course.position } : undefined}
+                                    />
+                                ) : course.image ? (
+                                    <Image
+                                        src={course.image}
+                                        alt={course.label}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        style={course.position ? { objectPosition: course.position } : undefined}
+                                    />
+                                ) : null}
+                                {(course.href === "/academia/dod" || course.href === "/academia/esteticke-nastrelovanie-nausnic") && (
+                                    <>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                        <div className="absolute bottom-0 left-0 right-0 p-4 space-y-0.5">
+                                            <p className="font-montserrat text-[9px] uppercase tracking-[0.2em] text-white/50">{course.sub}</p>
+                                            <h2 className="font-marcellus text-base uppercase tracking-widest text-white group-hover:text-gold transition-colors duration-300">
+                                                {course.label}
+                                            </h2>
+                                        </div>
+                                    </>
+                                )}
                             </Link>
                         ))}
                     </div>
 
                     {/* Center: Main Video */}
-                    <div className="max-w-[450px] w-full rounded-[2rem] overflow-hidden shadow-2xl relative aspect-[9/16] group shrink-0">
+                    <div className="max-w-[450px] w-full rounded-[2rem] overflow-hidden shadow-2xl relative aspect-[9/16] group shrink-0 border border-white/20">
                         <HeroVideo src="https://pub-60b685024baf4def829d5151d4dc320a.r2.dev/academia.mp4" />
-                        <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
                     </div>
 
                     {/* Right Side: 3 Cards Stacked */}
                     <div className="flex flex-col gap-8 w-full lg:w-[380px] xl:w-[500px]">
-                        {COURSES.slice(3, 6).map((course) => (
+                        {COURSES.slice(4, 8).map((course) => (
                             <Link
                                 key={course.href}
                                 href={course.href}
-                                className="group relative aspect-[16/7] overflow-hidden rounded-2xl border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] block"
+                                className="group relative aspect-[16/5] overflow-hidden rounded-2xl border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] block"
                             >
-                                <Image
-                                    src={course.image}
-                                    alt={course.label}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    style={course.position ? { objectPosition: course.position } : undefined}
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                                <div className="absolute bottom-0 left-0 right-0 p-4 space-y-0.5">
-                                    <p className="font-montserrat text-[9px] uppercase tracking-[0.2em] text-white/50">{course.sub}</p>
-                                    <h2 className="font-marcellus text-base uppercase tracking-widest text-white group-hover:text-gold transition-colors duration-300">
-                                        {course.label}
-                                    </h2>
-                                </div>
+                                {course.video ? (
+                                    <video
+                                        src={course.video}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        style={course.position ? { objectPosition: course.position } : undefined}
+                                    />
+                                ) : course.image ? (
+                                    <Image
+                                        src={course.image}
+                                        alt={course.label}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        style={course.position ? { objectPosition: course.position } : undefined}
+                                    />
+                                ) : null}
+                                {(course.href === "/academia/dod" || course.href === "/academia/esteticke-nastrelovanie-nausnic") && (
+                                    <>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                                        <div className="absolute bottom-0 left-0 right-0 p-4 space-y-0.5">
+                                            <p className="font-montserrat text-[9px] uppercase tracking-[0.2em] text-white/50">{course.sub}</p>
+                                            <h2 className="font-marcellus text-base uppercase tracking-widest text-white group-hover:text-gold transition-colors duration-300">
+                                                {course.label}
+                                            </h2>
+                                        </div>
+                                    </>
+                                )}
                             </Link>
                         ))}
                     </div>
                 </div>
             </section>
 
-                        <section className="mt-20 max-w-4xl mx-auto space-y-20 pb-32">
+                        <section className="mt-20 max-w-4xl mx-auto px-6 space-y-20 pb-32">
                     {/* Question 1 */}
                     <div className="space-y-8">
                         <div className="text-center space-y-2">
