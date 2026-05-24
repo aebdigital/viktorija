@@ -41,97 +41,81 @@ export default function Kurz3Page() {
         <AnimatedSpace className="space-y-16">
             <h1 className="sr-only">Master Class: PMU Očných Liniek</h1>
 
+            {/* Section 1: Intro & Techniques */}
             <PhotoSection photo={PHOTOS[0]} flip={false}>
-                <div className="space-y-6">
-                    <p className="font-montserrat text-lg font-light text-[#1D0E22] leading-snug">
-                        Špecializačný kurz zameraný na moderné techniky očných liniek, presnú prácu na viečkach a porozumenie forme oka.
+                <div className="space-y-4 font-montserrat font-light text-[#1D0E22] leading-tight text-lg [&_p]:my-0">
+                    <p className="font-montserrat text-lg font-light text-[#1D0E22] leading-snug mb-2 font-medium">
+                        MASTER CLASS — Permanentný make-up očných liniek
                     </p>
-                    
-                    <h2 className="font-marcellus text-xl md:text-2xl uppercase tracking-widest text-[#1D0E22] pt-4">
-                        Techniky, ktoré sa naučíte
-                    </h2>
-                    <ul className="space-y-4 font-montserrat text-lg font-light text-[#1D0E22] leading-snug">
-                        {[
-                            "Linky medzi riasy za 45 minút",
-                            "Kórejské očné linky s minerálnymi pigmentmi",
-                            "Tieňované očné linky v teplých odtieňoch pigmentov"
-                        ].map((item, i) => (
-                            <li key={i} className="flex gap-3"><span className="text-[#1D0E22]/30 mt-0.5 shrink-0">✦</span><span>{item}</span></li>
-                        ))}
-                    </ul>
-                    <div className="pt-4 space-y-1 font-montserrat text-sm text-[#1D0E22]/70">
-                        <p><span className="font-medium text-[#1D0E22]">Začiatok:</span> 28. 9. 2026</p>
-                        <p><span className="font-medium text-[#1D0E22]">Záverečná korekcia:</span> 6. 11. 2026</p>
-                    </div>
+                    <p>
+                        Očné linky patria medzi najprecíznejšie techniky permanentného make-upu. Práca na viečkach vyžaduje jemnosť, technickú kontrolu a správne nastavenie ruky.
+                    </p>
+                    <p>
+                        Ja osobne si myslím, že linky medzi riasy pristanú takmer každému oku. Niektorým klientkam pristane len veľmi jemné zahustenie medzi riasami, iným mäkký chvostík alebo linka vedená jemne nad líniou rias.
+                    </p>
+                    <p>
+                        Ich najväčšou výhodou je, že opticky vytvárajú efekt hustejších rias a zvýrazňujú pohľad bez toho, aby pôsobili ťažko.
+                    </p>
+                    <p>
+                        Kórejské očné linky patria medzi moderné svetové trendy. Sú jemné, elegantné, vzdušné a klientky ich veľmi žiadajú. Vďaka tejto technike obohatíte svoju ponuku o aktuálnu estetickú novinku zo sveta moderného permanentného make-upu.
+                    </p>
+                    <p>
+                        Tieňované očné linky patria technicky medzi najnáročnejšie techniky tetovania viečok. Vyžadujú trpezlivosť, jemnosť, technické znalosti a pochopenie práce s tieňom, hustotou a gradáciou pigmentu.
+                    </p>
                 </div>
             </PhotoSection>
 
+            {/* Section 2: What we will cover & Who it is for */}
             <PhotoSection photo={PHOTOS[1]} flip={true}>
-                <div className="space-y-6">
-                    <div>
-                        <h2 className="font-marcellus text-xl md:text-2xl uppercase tracking-widest text-[#1D0E22]">Program kurzu</h2>
-                    </div>
-                    <div className="space-y-2">
-                        {SCHEDULE.map((block) => (
-                            <div key={block.num}>
-                                <div className="flex gap-3">
-                                    <span className="font-marcellus text-3xl text-[#1D0E22]/15 leading-none shrink-0">{block.num}</span>
-                                    <div className="space-y-0.5">
-                                        <div>
-                                            <p className="font-marcellus text-sm uppercase tracking-widest text-[#1D0E22] leading-tight">{block.title}</p>
-                                            {block.date && <p className="font-montserrat text-xs text-[#1D0E22]/45 leading-tight">{block.date}</p>}
-                                        </div>
-                                        <ul className="font-montserrat text-sm font-light text-[#1D0E22]/70 leading-tight">
-                                            {block.items.map((item, i) => (
-                                                <li key={i} className="flex gap-1.5"><span className="text-[#1D0E22]/25 shrink-0">—</span><span>{item}</span></li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                <div className="space-y-4 font-montserrat font-light text-[#1D0E22] leading-tight text-lg [&_p]:my-0">
+                    <p className="font-medium text-base uppercase tracking-wider">Počas kurzu sa budeme venovať:</p>
+                    <ul className="space-y-1.5 text-sm text-[#1D0E22]/80">
+                        <li className="flex gap-2"><span className="text-[#1D0E22]/25 shrink-0">—</span><span>správnemu nastaveniu ruky pre jemnú prácu na viečkach</span></li>
+                        <li className="flex gap-2"><span className="text-[#1D0E22]/25 shrink-0">—</span><span>technike natiahnutia pokožky</span></li>
+                        <li className="flex gap-2"><span className="text-[#1D0E22]/25 shrink-0">—</span><span>anatómii očí a viečok</span></li>
+                        <li className="flex gap-2"><span className="text-[#1D0E22]/25 shrink-0">—</span><span>korekcii formy oka</span></li>
+                        <li className="flex gap-2"><span className="text-[#1D0E22]/25 shrink-0">—</span><span>vyrovnávaniu asymetrie</span></li>
+                        <li className="flex gap-2"><span className="text-[#1D0E22]/25 shrink-0">—</span><span>vytváraniu harmonického mandľového tvaru oka</span></li>
+                        <li className="flex gap-2"><span className="text-[#1D0E22]/25 shrink-0">—</span><span>výberu vhodných ihiel a nastaveniu strojčeka</span></li>
+                        <li className="flex gap-2"><span className="text-[#1D0E22]/25 shrink-0">—</span><span>bezpečnej a šetrnej práci na citlivej pokožke viečok</span></li>
+                    </ul>
+
+                    <p className="pt-4">
+                        Kurz je určený pre artistov, ktorí chcú získať väčšiu istotu pri práci na očiach a naučiť sa vytvárať moderné, jemné a estetické očné linky.
+                    </p>
+
+                    <div className="pt-4 border-t border-[#1D0E22]/10">
+                        <p className="text-sm font-medium text-[#1D0E22] italic">
+                            ⚠️ Prosím, príďte s krátkymi prírodnými nechtami.
+                        </p>
                     </div>
                 </div>
             </PhotoSection>
 
-            <div className="space-y-8">
-                <div className="border border-[#1D0E22]/10 rounded-2xl p-8 space-y-6">
-                    <h2 className="font-marcellus text-sm uppercase tracking-[0.2em] text-[#1D0E22]">Rozsah kurzu</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
-                        <div>
-                            <p className="font-marcellus text-3xl text-[#1D0E22]">27 hod</p>
-                            <p className="font-montserrat text-[11px] uppercase tracking-wider text-[#1D0E22]/50">Prezenčne</p>
-                        </div>
-                        <div>
-                            <p className="font-marcellus text-3xl text-[#1D0E22]">2 hod</p>
-                            <p className="font-montserrat text-[11px] uppercase tracking-wider text-[#1D0E22]/50">Online stretnutia</p>
-                        </div>
-                    </div>
+            {/* Pricing Section */}
+            <div className="grid md:grid-cols-2 gap-6 md:max-w-[66.666%] md:mx-auto">
+                <div className="border border-[#1D0E22]/30 bg-[#1D0E22]/5 rounded-2xl p-8 text-center space-y-3 flex flex-col justify-center">
+                    <p className="font-montserrat text-xs uppercase tracking-[0.2em] text-[#1D0E22]/50">Cena kurzu</p>
+                    <p className="font-marcellus text-5xl text-[#1D0E22]">1 240 €</p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6 md:max-w-[66.666%] md:mx-auto">
-                    <div className="border border-[#1D0E22]/30 bg-[#1D0E22]/5 rounded-2xl p-8 text-center space-y-3 flex flex-col justify-center">
-                        <p className="font-montserrat text-xs uppercase tracking-[0.2em] text-[#1D0E22]/50">Cena kurzu</p>
-                        <p className="font-marcellus text-5xl text-[#1D0E22]">1 240 €</p>
-                    </div>
-                    <a
-                        href="https://www.tatrabanka.sk/sk/business/uvery-financovanie/online-podnikatelsky-uver/?utm_medium=banner&utm_campaign=opu2026&utm_source=viktorijakendra"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Tatra banka – Online podnikateľský úver"
-                        className="relative block overflow-hidden rounded-2xl border border-gold/30 bg-gold/5 h-full min-h-[180px]"
-                    >
-                        <Image
-                            src="/_unused/tb-opu/TB-OPU_1000x450px-ucto_1.jpg"
-                            alt="Tatra banka – Online podnikateľský úver"
-                            fill
-                            className="object-cover"
-                        />
-                    </a>
-                </div>
+                <a
+                    href="https://www.tatrabanka.sk/sk/business/uvery-financovanie/online-podnikatelsky-uver/?utm_medium=banner&utm_campaign=opu2026&utm_source=viktorijakendra"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Tatra banka – Online podnikateľský úver"
+                    className="relative block overflow-hidden rounded-2xl border border-gold/30 bg-gold/5 h-full min-h-[180px]"
+                >
+                    <Image
+                        src="/_unused/tb-opu/TB-OPU_1000x450px-ucto_1.jpg"
+                        alt="Tatra banka – Online podnikateľský úver"
+                        fill
+                        className="object-cover"
+                    />
+                </a>
             </div>
 
             <CourseBookingSection courseName="Master Class: PMU Očných Liniek" />
-        <ContactCTA />
+            <ContactCTA />
         </AnimatedSpace>
     );
 }
